@@ -1,0 +1,39 @@
+body{
+    margin: auto;
+    background-color:#bce2ff; 
+}
+header{
+    width: 100%;
+    height:12vmax;
+    color: #fff;
+    text-shadow: 0.5vh 0.5vh 0.5vh black;
+    box-shadow: 0.5vh 0.5vh 0.5vh black;
+}
+
+footer{
+    width: 100%;
+    height:6vmax;
+    text-align: right;
+    color: #fff;
+    text-shadow: 0.5vh 0.5vh 0.5vh black;
+    box-shadow: 0.5vh 0.5vh 0.5vh black;
+    padding: auto;
+}
+
+.card{
+    box-shadow: 0.5vh 0.5vh 0.5vh black;
+}
+
+h2{
+    color: #fff;
+    text-shadow: 0.5vh 0.5vh 0.5vh black;
+}
+#turma{
+    margin-top: 2vh;
+    font-size: 18vh;
+    color: #fff;
+    text-shadow: 0.5vh 0.5vh 0.5vh black;
+}
+
+
+
