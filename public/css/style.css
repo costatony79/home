@@ -28,12 +28,18 @@ h2{
     color: #fff;
     text-shadow: 0.5vh 0.5vh 0.5vh black;
 }
+
+h3{
+    font-size: 3vw;
+}
+
 #turma{
     margin-top: 2vh;
-    font-size: 18vh;
+    font-size: 10vw;
     color: #fff;
     text-shadow: 0.5vh 0.5vh 0.5vh black;
 }
+
 
 
 
