@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"dev": "nodemon server.js"
-
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +17,8 @@
     "mysql2": "^3.4.0",
     "node-notifier": "^10.0.1",
     "sequelize": "^6.32.1"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^2.11.338"
   }
 }

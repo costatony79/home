@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 const notifier = require('node-notifier');
+const pdfjsLib = require('pdfjs-dist');
+
+
+
 
 //definição do bodyParser
 const bodyParser = require("body-parser");
@@ -16,6 +20,8 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
+
+
 //rota para a página inicial
 app.get("/", (req, res) => {
     res.render("index");
@@ -30,6 +36,18 @@ app.get("/juslany", (req, res) => {
 app.get("/america", (req, res) => {
     res.render("america");
 });
+
+//rota para a página leituras
+app.get("/leituras", (req, res) => {
+    res.render("leituras");
+});
+
+//rota para a página DO LIVRO A VIAGEM DE VOLTA
+app.get("/a-viagem", (req, res) => {
+   res.render("a-viagem");
+});
+
+
 
 
 

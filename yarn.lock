@@ -574,6 +574,11 @@
   "resolved" "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz"
   "version" "0.1.7"
 
+"pdfjs-dist@^2.11.338":
+  "integrity" "sha512-Ti5VTB0VvSdtTtc7TG71ghMx0SEuNcEs4ghVuZxW0p6OqLjMc0xekZV1B+MmlxEG2Du2e5jgazucWIG/SXTcdA=="
+  "resolved" "https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-2.11.338.tgz"
+  "version" "2.11.338"
+
 "pg-connection-string@^2.6.0":
   "integrity" "sha512-x14ibktcwlHKoHxx9X3uTVW9zIGR41ZB6QNhHb21OPNdCCO3NaRnpJuwKIQSR4u+Yqjx4HCvy7Hh7VSy1U4dGg=="
   "resolved" "https://registry.npmjs.org/pg-connection-string/-/pg-connection-string-2.6.0.tgz"
