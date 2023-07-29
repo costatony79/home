@@ -23,6 +23,9 @@ footer{
 .card{
     box-shadow: 0.5vh 0.5vh 0.5vh black;
 }
+h1{
+    font-size: 4.5vh;
+}
 
 h2{
     color: #fff;
