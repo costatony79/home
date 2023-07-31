@@ -32,6 +32,12 @@ app.get("/juslany", (req, res) => {
     res.render("juslany");
 });
 
+//rota para a página testes
+app.get("/testes", (req, res) => {
+    res.render("testes");
+});
+
+
 //rota para a página america
 app.get("/america", (req, res) => {
     res.render("america");
