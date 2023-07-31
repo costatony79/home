@@ -53,6 +53,16 @@ app.get("/a-viagem", (req, res) => {
    res.render("a-viagem");
 });
 
+//rota para a página do teste de leitura 06 agosto
+app.get("/teste-leitura-agosto", (req, res) => {
+    res.render("teste-leitura-agosto");
+ });
+ //rota para a página do teste de leitura 05 agosto
+app.get("/teste-leitura-julho", (req, res) => {
+    res.render("teste-leitura-julho");
+ });
+
+
 
 
 
