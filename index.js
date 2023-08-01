@@ -61,6 +61,10 @@ app.get("/teste-leitura-agosto", (req, res) => {
 app.get("/teste-leitura-julho", (req, res) => {
     res.render("teste-leitura-julho");
  });
+  //rota para a página dos trabalhos
+app.get("/trabalhos", (req, res) => {
+    res.render("trabalhos");
+ });
 
 
 
