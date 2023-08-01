@@ -66,7 +66,10 @@ app.get("/trabalhos", (req, res) => {
     res.render("trabalhos");
  });
 
-
+  //rota para a página das atividades do meu saeb digital
+  app.get("/meu-saeb", (req, res) => {
+    res.render("meu-saeb");
+ });
 
 
 
