@@ -48,6 +48,11 @@ app.get("/leituras", (req, res) => {
     res.render("leituras");
 });
 
+//rota para a página da atividade sobre frações
+app.get("/fracao", (req, res) => {
+    res.render("fracao");
+});
+
 //rota para a página DO LIVRO A VIAGEM DE VOLTA
 app.get("/a-viagem", (req, res) => {
    res.render("a-viagem");

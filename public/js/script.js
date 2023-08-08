@@ -65,4 +65,43 @@ function validarFormulario() {
 
   return true;
 }
+        // Array com as respostas corretas
+        const respostasCorretas = ["3/4", "1/4", "1/4", "3/4", "2/8", "6/8", "1/3", "2/3", "2/5", "3/5", "9/12", "3/12", "2/6", "4/6", "4/10", "6/10"  ];
 
+        function checkAnswer(index) {
+          const respostaSelecionada = document.getElementById(`q${index + 1}`).value;
+
+          if (respostaSelecionada === respostasCorretas[index]) {
+              // Resposta correta - tornar o campo somente leitura
+              document.getElementById(`q${index + 1}`).readOnly = true;
+              document.getElementById(`q${index + 1}`).style.backgroundColor = "green";
+              document.getElementById(`q${index + 1}`).style.color = "white";
+          } 
+      }
+
+
+        function checkAnswers() {
+            const respostasSelecionadas = [
+                document.getElementById("q1").value,
+                document.getElementById("q2").value,
+                document.getElementById("q3").value
+            ];
+
+            
+
+            // Verificar as respostas selecionadas e calcular a pontuação
+            let pontuacao = 0;
+            for (let i = 0; i < respostasSelecionadas.length; i++) {
+                if (respostasSelecionadas[i] === respostasCorretas[i]) {
+                    pontuacao += 10;
+                    // Alterar o estilo para resposta correta
+                    document.getElementById(`q${i}`).style.backgroundColor = "green";
+                    document.getElementById(`q${i}`).style.color = "white";
+                    document.getElementById(`q${i}`).readOnly = true;
+                } 
+            } 
+
+
+       
+        }
+   
