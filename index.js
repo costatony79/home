@@ -75,7 +75,10 @@ app.get("/trabalhos", (req, res) => {
   app.get("/meu-saeb", (req, res) => {
     res.render("meu-saeb");
  });
-
+//rota para a página DO LIVRO DA CAPOEIRA AO CARIMBÓ
+app.get("/da_capoeira_ao_carimbo", (req, res) => {
+    res.render("da_capoeira_ao_carimbo");
+ });
 
 
 
