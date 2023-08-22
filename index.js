@@ -80,6 +80,11 @@ app.get("/da_capoeira_ao_carimbo", (req, res) => {
     res.render("da_capoeira_ao_carimbo");
  });
 
+ //rota para a página DO LIVRO DA CAPOEIRA AO CARIMBÓ
+app.get("/estados", (req, res) => {
+    res.render("caca_palavras_estados");
+ });
+
 
 
 //servidor

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Caça-Palavras Estados do Brasil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #caçaPalavras {
+            width: 100%;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #000;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 20px;
+        }
+
+        #estadosEncontradosList {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Caça-Palavras Estados do Brasil</h1>
+    <div id="caçaPalavras">
+        <table id="tabela"></table>
+    </div>
+    <div id="resultado">
+        <h2>Estados Encontrados:</h2>
+        <ul id="estadosEncontradosList"></ul>
+        <p><strong>Estados restantes:</strong> <span id="estadosRestantes">27</span></p>
+    </div>
+
+    <script>
+        const estados = [
+            'ACRE', 'ALAGOAS', 'AMAPÁ', 'AMAZONAS', 'BAHIA', 'CEARÁ', 'DISTRITO FEDERAL',
+            'ESPÍRITO SANTO', 'GOIÁS', 'MARANHÃO', 'MATO GROSSO', 'MATO GROSSO DO SUL',
+            'MINAS GERAIS', 'PARÁ', 'PARAÍBA', 'PARANÁ', 'PERNAMBUCO', 'PIAUÍ', 'RIO DE JANEIRO',
+            'RIO GRANDE DO NORTE', 'RIO GRANDE DO SUL', 'RONDÔNIA', 'RORAIMA', 'SANTA CATARINA',
+            'SÃO PAULO', 'SERGIPE', 'TOCANTINS'
+        ];
+
+        let estadosEncontrados = 0;
+
+        function checkEstado(estado) {
+            estado = estado.toUpperCase();
+            if (estados.includes(estado)) {
+                estadosEncontrados++;
+                document.getElementById('estadosEncontrados').textContent = estadosEncontrados;
+                const index = estados.indexOf(estado);
+                estados.splice(index, 1);
+                document.getElementById('estadosRestantes').textContent = estados.length;
+                document.getElementById('estadosEncontradosList').innerHTML += `<li>${estado}</li>`;
+            }
+        }
+
+        const table = document.getElementById('tabela');
+        const numLinhas = 10;
+        const numColunas = 10;
+
+        // Grade com letras aleatórias
+        const grid = [
+            ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
+            ['K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T'],
+            ['U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D'],
+            ['E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'],
+            ['O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X'],
+            ['Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+            ['I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R'],
+            ['S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B'],
+            ['C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
+            ['M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V']
+        ];
+
+        // Preencha a tabela com a grade de letras
+        for (let i = 0; i < numLinhas; i++) {
+            const row = document.createElement('tr');
+            for (let j = 0; j < numColunas; j++) {
+                const cell = document.createElement('td');
+                cell.textContent = grid[i][j];
+                row.appendChild(cell);
+            }
+            table.appendChild(row);
+        }
+
+        // Adicione o evento de clique para verificar se o estado foi encontrado
+        const cells = table.getElementsByTagName('td');
+        for (let cell of cells) {
+            cell.addEventListener('click', function () {
+                if (this.style.backgroundColor !== 'lightgray' && this.textContent !== '') {
+                    this.style.backgroundColor = 'lightgray';
+                    checkEstado(this.textContent);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
