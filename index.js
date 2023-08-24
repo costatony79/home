@@ -85,6 +85,15 @@ app.get("/estados", (req, res) => {
     res.render("caca_palavras_estados");
  });
 
+ //rota para a página DO LIVRO O SEGUNDO E ÚLTIMO IMPERADOR DO BRASIL
+app.get("/o_segundo_e_ultimo", (req, res) => {
+    res.render("o_segundo_e_ultimo");
+ });
+
+  //rota para a página DO LIVRO CICATRIZ E O MÃO DE FERRO
+app.get("/cicatriz", (req, res) => {
+    res.render("cicatriz");
+ });
 
 
 //servidor
