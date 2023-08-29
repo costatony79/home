@@ -97,6 +97,11 @@ app.get("/cicatriz", (req, res) => {
     res.render("cicatriz");
  });
 
+ //Rotas para as páginas das turmas América Sarmento
+ app.get("/61", (req, res) => {
+    res.render("61");
+ });
+
 
 //servidor
 app.listen(1313, ()=>{
