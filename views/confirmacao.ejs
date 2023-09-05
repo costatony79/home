@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="wnameth=device-wnameth, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Resultado</title>
+    </head>
+<body>
+    <div class="container">
+        <div class="display-3">ATIVIDADE AVALIATIVA</div>
+        <hr>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nome: </span>
+            <div class="display-4"><%= nome.toUpperCase() %></div>
+          </div>
+          <div class="input-group mb-3">              
+              <span class="input-group-text" id="basic-addon1">Turma: </span>
+              <div class="display-4"><%= turma %></div>
+            </div>
+      
+        <hr>
+        <div class="h7">SUAS RESPOSTAS:</div>
+    </div> 
+    <div class="container">
+        <table class="table table-dark table-hover">
+            <thead>           
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+                <th>19</th>
+                <th>20</th>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+                <th>24</th>
+                <th>25</th>
+                <th>26</th>
+                <th>27</th>
+                <th>28</th>
+                <th>29</th>
+                <th>30</th>
+
+            </thead>
+            <tbody>         
+                
+                <tr>
+                    <% respostas.forEach(function(respostas) { %>
+                        <td><%= respostas.toUpperCase() %></td>        
+                        <% }); %> 
+                    </tr>
+                    
+                    <% 
+                let count = 0;
+                for (let i = 0; i < respostas.length; i++) {
+                    if (respostas[i].toUpperCase() === res[i]) {
+                        count++;
+                    }
+                }
+                %>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="container">
+        <div class="display-3 text-center">RESULTADO</div>
+        <hr>
+        <div id="resultado" class="bg-dark text-center text-light display-4">Você fez <%= count %> pontos</div>
+    
+        <hr>
+        <a href="/" class="btn btn-primary btn-block">VOLTAR PARA O ÍNICIO</a>
+    </div>
+
+
+       
+</body>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/popper.min.js"></script>
+<script src="/js/js.js"></script>   
+
+</html>

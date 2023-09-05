@@ -34,10 +34,11 @@ function iniciarTemporizador() {
 
 function validarFormulario() {
   var campoTexto = document.getElementById('name').value.trim();
+  var turma = document.getElementById('turma').value.trim();
   var gruposRadio = document.getElementsByClassName('btn-group');
 
-  if (campoTexto === '') {
-    alert('Por favor, preencha o seu nome.');
+  if (campoTexto === '' || turma === "") {
+    alert('Por favor, preencha o seu nome/turma.');
     return false;
   }
 
