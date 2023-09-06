@@ -191,6 +191,7 @@ app.get("/cicatriz", (req, res) => {
               });
             res.redirect("303_terceiro_bimestre");
         }else {
+       
             Turma303_bim_3.create({
                 nome: nome.toUpperCase(),
                 turma: turma,
@@ -268,126 +269,72 @@ app.get("/cicatriz", (req, res) => {
             });
         }
     });
-      //Rotas para receber os gabaritos das turmas 303
-      app.post("/confirmacao_terceiro_ano", (req, res) => {
-        var nome = req.body.name;
-        var turma = req.body.turma;
-        var q1 = req.body.q1;
-        var q2 = req.body.q2;
-        var q3 = req.body.q3;
-        var q4 = req.body.q4;
-        var q5 = req.body.q5;
-        var q6 = req.body.q6;
-        var q7 = req.body.q7;
-        var q8 = req.body.q8;
-        var q9 = req.body.q9;
-        var q10 = req.body.q10;
-        var q11 = req.body.q11;
-        var q12 = req.body.q12;
-        var q13 = req.body.q13;
-        var q14 = req.body.q14;
-        var q15 = req.body.q15;
-        var q16 = req.body.q16;
-        var q17 = req.body.q17;
-        var q18 = req.body.q18;
-        var q19 = req.body.q19;
-        var q20 = req.body.q20;
-        var q21 = req.body.q21;
-        var q22 = req.body.q22;
-        var q23 = req.body.q23;
-        var q24 = req.body.q24;
-        var q25 = req.body.q25;
-        var q26 = req.body.q26;
-        var q27 = req.body.q27;
-        var q28 = req.body.q28;
-        var q29 = req.body.q29;
-        var q30 = req.body.q30;
-        
-        if(nome==""||turma==""||q1==null||q2==null||q3==null||q4==null||q5==null||q6==null
-        ||q7==null||q8==null||q9==null||q10==null||q11==null||q12==null||q13==null||q14==null||q15==null
-        ||q16==null||q17==null||q18==null||q19==null||q20==null||q21==null||q22==null||q23==null||q24==null
-        ||q25==null||q26==null||q27==null||q28==null||q29==null||q30==null){
-            notifier.notify({
-                title: 'RESPONDA TODAS AS PERGUNTAS',
-                message: 'Você não pode deixar nenhum campo em branco.'
-              });
-            res.redirect("303_terceiro_bimestre");
-        }else {
-            Turma303_bim_3.create({
-                nome: nome.toUpperCase(),
-                turma: turma,
-                q1: q1,
-                q2: q2,
-                q3: q3,
-                q4: q4,
-                q5: q5,
-                q6: q6,
-                q7: q7,
-                q8: q8,
-                q9: q9,
-                q10: q10,
-                q11: q11,
-                q12: q12,
-                q13: q13,
-                q14: q14,
-                q15: q15,
-                q16: q16,
-                q17: q17,
-                q18: q18,
-                q19: q19,
-                q20: q20,
-                q21: q21,
-                q22: q22,
-                q23: q23,
-                q24: q24,
-                q25: q25,
-                q26: q26,
-                q27: q27,
-                q28: q28,
-                q29: q29,
-                q30: q30
-            }).then(() => {
-                notifier.notify({
-                    title: 'GABARITO SALVO COM SUCESSO',
-                    message: 'Parabéns você preencheu tudo.'
-                  });
-                  res.render("confirmacao", {
-                    nome: nome,
-                    turma: turma,
-                    q1: q1,
-                    q2: q2,
-                    q3: q3,
-                    q4: q4,
-                    q5: q5,
-                    q6: q6,
-                    q7: q7,
-                    q8: q8,
-                    q9: q9,
-                    q10: q10,
-                    q11: q11,
-                    q12: q12,
-                    q13: q13,
-                    q14: q14,
-                    q15: q15,
-                    q16: q16,
-                    q17: q17,
-                    q18: q18,
-                    q19: q19,
-                    q20: q20,
-                    q21: q21,
-                    q22: q22,
-                    q23: q23,
-                    q24: q24,
-                    q25: q25,
-                    q26: q26,
-                    q27: q27,
-                    q28: q28,
-                    q29: q29,
-                    q30: q30
-                });
-            });
-        }
+
+    //rota para apagar um registro da tabela da 303
+app.post("/deletarturma303", (req, res) => {
+    var id = req.body.id;
+    if(id != undefined){
+        Turma303_bim_3.destroy({
+            where: {
+                id: id
+            }
+            
+        }).then(()=>{
+            res.redirect("/gabaritos");
+        });
+    }
+    
     });
+//rota para exibição da página com todos os gabaritos
+app.get("/gabaritos", (req, res) => {
+    var total = 0;
+    const gabaritoTerceiroAnobim3 = ["303", "Tony Costa", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", 
+    "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B", "C", "D", "A", "B"];
+    var nome = req.body.name;
+    var turma = req.body.turma;
+    var q1 = req.body.q1;
+    var q2 = req.body.q2;
+    var q3 = req.body.q3;
+    var q4 = req.body.q4;
+    var q5 = req.body.q5;
+    var q6 = req.body.q6;
+    var q7 = req.body.q7;
+    var q8 = req.body.q8;
+    var q9 = req.body.q9;
+    var q10 = req.body.q10;
+    var q11 = req.body.q11;
+    var q12 = req.body.q12;
+    var q13 = req.body.q13;
+    var q14 = req.body.q14;
+    var q15 = req.body.q15;
+    var q16 = req.body.q16;
+    var q17 = req.body.q17;
+    var q18 = req.body.q18;
+    var q19 = req.body.q19;
+    var q20 = req.body.q20;
+    var q21 = req.body.q21;
+    var q22 = req.body.q22;
+    var q23 = req.body.q23;
+    var q24 = req.body.q24;
+    var q25 = req.body.q25;
+    var q26 = req.body.q26;
+    var q27 = req.body.q27;
+    var q28 = req.body.q28;
+    var q29 = req.body.q29;
+    var q30 = req.body.q30;
+    const  respostasTerceiroAnobim3 = [nome, turma, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24,
+    q25, q26, q27, q28, q29, q30];
+    Turma303_bim_3.findAll({order: [['nome', 'ASC']]}).then(turma303 => {
+        res.render("gabaritos", {
+            nome: nome,
+            turma: turma,
+            total: total,
+            turma303: turma303,
+            gabaritoTerceiroAnobim3: gabaritoTerceiroAnobim3,
+            respostasTerceiroAnobim3: respostasTerceiroAnobim3
+        }); 
+    });
+});
 
 //servidor
 app.listen(1313, ()=>{
