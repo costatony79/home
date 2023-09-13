@@ -196,8 +196,8 @@ app.get("/cicatriz", (req, res) => {
 
   //Rotas para receber os gabaritos das turmas 61
   app.post("/gabarito_61_bim_3", (req, res) => {
-    const respostasCorretas = ["A", "A", "D", "E", "C", "C", "C", "B", "D", "C", "D", 
-    "D", "E", "D", "D", "A", "E", "C", "B", "C", "B", "A", "D", "A", "A", "B", "C", "C", "C", "C"];
+    const respostasCorretas = ["C", "E", "A", "C", "E", "A", "C", "D", "C", "C", "E", 
+    "B", "B", "E", "D", "C", "C", "E", "C", "C", "B", "D", "B", "A", "D", "A", "B", "D", "D", "C"];
     var total = 0;
     var nome = req.body.name;
     var turma = req.body.turma;
@@ -325,8 +325,8 @@ app.get("/cicatriz", (req, res) => {
 
   //Rotas para receber os gabaritos das turmas 62
   app.post("/gabarito_62_bim_3", (req, res) => {
-    const respostasCorretas = ["A", "A", "D", "E", "C", "C", "C", "B", "D", "C", "D", 
-    "D", "E", "D", "D", "A", "E", "C", "B", "C", "B", "A", "D", "A", "A", "B", "C", "C", "C", "C"];
+    const respostasCorretas = ["C", "E", "A", "C", "E", "A", "C", "D", "C", "C", "E", 
+    "B", "B", "E", "D", "C", "C", "E", "C", "C", "B", "D", "B", "A", "D", "A", "B", "D", "D", "C"];
     var total = 0;
     var nome = req.body.name;
     var turma = req.body.turma;
@@ -454,8 +454,8 @@ app.get("/cicatriz", (req, res) => {
 
   //Rotas para receber os gabaritos das turmas 63
   app.post("/gabarito_63_bim_3", (req, res) => {
-    const respostasCorretas = ["A", "A", "D", "E", "C", "C", "C", "B", "D", "C", "D", 
-    "D", "E", "D", "D", "A", "E", "C", "B", "C", "B", "A", "D", "A", "A", "B", "C", "C", "C", "C"];
+    const respostasCorretas = ["C", "E", "A", "C", "E", "A", "C", "D", "C", "C", "E", 
+    "B", "B", "E", "D", "C", "C", "E", "C", "C", "B", "D", "B", "A", "D", "A", "B", "D", "D", "C"];
     var total = 0;
     var nome = req.body.name;
     var turma = req.body.turma;
@@ -583,8 +583,8 @@ app.get("/cicatriz", (req, res) => {
 
   //Rotas para receber os gabaritos das turmas 64
   app.post("/gabarito_64_bim_3", (req, res) => {
-    const respostasCorretas = ["A", "A", "D", "E", "C", "C", "C", "B", "D", "C", "D", 
-    "D", "E", "D", "D", "A", "E", "C", "B", "C", "B", "A", "D", "A", "A", "B", "C", "C", "C", "C"];
+    const respostasCorretas = ["C", "E", "A", "C", "E", "A", "C", "D", "C", "C", "E", 
+    "B", "B", "E", "D", "C", "C", "E", "C", "C", "B", "D", "B", "A", "D", "A", "B", "D", "D", "C"];
     var total = 0;
     var nome = req.body.name;
     var turma = req.body.turma;
@@ -1276,7 +1276,7 @@ app.get("/cicatriz", (req, res) => {
     app.post("/deletarturma64", (req, res) => {
         var id = req.body.id;
         if(id != undefined){
-            Turma63_bim_3.destroy({
+            Turma64_bim_3.destroy({
                 where: {
                     id: id
                 }
