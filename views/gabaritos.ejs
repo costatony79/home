@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <title>GABARITOS</title>
@@ -456,6 +457,114 @@
 <div class="container-sm">
     <div class="row">
         <div class="col">
+            <h3 class="display-6 text-center">TURMA 101</h3>            
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning" id="esconder_turma101">Esconder</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-success" id="mostrar_turma101">Mostrar</button> 
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container-sm fecha" id="gab_turma101">
+        <table class="table table-dark tabela-container">
+            <thead>
+                <th>Turma</th>
+                <th>Nome</th>           
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+                <th>19</th>
+                <th>20</th>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+                <th>24</th>
+                <th>25</th>
+                <th>26</th>
+                <th>27</th>
+                <th>28</th>
+                <th>29</th>
+                <th>30</th>
+                <th>NOTA</th>
+                <th>AÇÃO</th>
+
+            </thead>
+            
+            <tbody>         
+                
+                <% turma101.forEach(function(turma101) { %>
+                     <tr>          
+                        <td><%= turma101.turma %></td>
+                        <td><%= turma101.nome %></td>
+                        <td><%= turma101.q1 %><%if(turma101.q1=="C"){total++}%></td>
+                        <td><%= turma101.q2 %><%if(turma101.q2=="E"){total++}%></td>
+                        <td><%= turma101.q3 %><%if(turma101.q3=="A"){total++}%></td>
+                        <td><%= turma101.q4 %><%if(turma101.q4=="C"){total++}%></td>
+                        <td><%= turma101.q5 %><%if(turma101.q5=="E"){total++}%></td>
+                        <td><%= turma101.q6 %><%if(turma101.q6=="A"){total++}%></td>
+                        <td><%= turma101.q7 %><%if(turma101.q7=="C"){total++}%></td>
+                        <td><%= turma101.q8 %><%if(turma101.q8=="D"){total++}%></td>
+                        <td><%= turma101.q9 %><%if(turma101.q9=="C"){total++}%></td>
+                        <td><%= turma101.q10 %><%if(turma101.q10=="C"){total++}%></td>
+                        <td><%= turma101.q11 %><%if(turma101.q11=="E"){total++}%></td>
+                        <td><%= turma101.q12 %><%if(turma101.q12=="B"){total++}%></td>
+                        <td><%= turma101.q13 %><%if(turma101.q13=="B"){total++}%></td>
+                        <td><%= turma101.q14 %><%if(turma101.q14=="E"){total++}%></td>
+                        <td><%= turma101.q15 %><%if(turma101.q15=="D"){total++}%></td>
+                        <td><%= turma101.q16 %><%if(turma101.q16=="C"){total++}%></td>
+                        <td><%= turma101.q17 %><%if(turma101.q17=="C"){total++}%></td>
+                        <td><%= turma101.q18 %><%if(turma101.q18=="E"){total++}%></td>
+                        <td><%= turma101.q19 %><%if(turma101.q19=="C"){total++}%></td>
+                        <td><%= turma101.q20 %><%if(turma101.q20=="C"){total++}%></td>
+                        <td><%= turma101.q21 %><%if(turma101.q21=="B"){total++}%></td>
+                        <td><%= turma101.q22 %><%if(turma101.q22=="D"){total++}%></td>
+                        <td><%= turma101.q23 %><%if(turma101.q23=="B"){total++}%></td>
+                        <td><%= turma101.q24 %><%if(turma101.q24=="A"){total++}%></td>
+                        <td><%= turma101.q25 %><%if(turma101.q25=="D"){total++}%></td>
+                        <td><%= turma101.q26 %><%if(turma101.q26=="A"){total++}%></td>
+                        <td><%= turma101.q27 %><%if(turma101.q27=="B"){total++}%></td>
+                        <td><%= turma101.q28 %><%if(turma101.q28=="D"){total++}%></td>
+                        <td><%= turma101.q29 %><%if(turma101.q29=="D"){total++}%></td>
+                        <td><%= turma101.q30 %><%if(turma101.q30=="C"){total++}%></td>
+                        <td><%= total %></td>
+                        <% total = 0 %>        
+                        <td class="align-middle">
+                            <form method="POST" action="/deletarturma101">
+                                <input type="hidden" name="id" value="<%=turma101.id%>">
+                                <button class="btn btn-danger">Deletar</button>
+                            </form>
+                        </td>
+                        
+                      </tr>
+                    <% }); %> 
+                
+        </tbody>
+           
+    </table>
+
+</div>
+<div class="container-sm">
+    <div class="row">
+        <div class="col">
             <h3 class="display-6 text-center">TURMA 303</h3>            
         </div>
         <div class="row">
@@ -468,6 +577,116 @@
         </div>
     </div>    
 </div>
+
+<div class="container-sm fecha" id="gab_turma102">
+    <table class="table table-dark tabela-container">
+        <thead>
+            <th>Turma</th>
+            <th>Nome</th>           
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>11</th>
+            <th>12</th>
+            <th>13</th>
+            <th>14</th>
+            <th>15</th>
+            <th>16</th>
+            <th>17</th>
+            <th>18</th>
+            <th>19</th>
+            <th>20</th>
+            <th>21</th>
+            <th>22</th>
+            <th>23</th>
+            <th>24</th>
+            <th>25</th>
+            <th>26</th>
+            <th>27</th>
+            <th>28</th>
+            <th>29</th>
+            <th>30</th>
+            <th>NOTA</th>
+            <th>AÇÃO</th>
+
+        </thead>
+        
+        <tbody>         
+            
+            <% turma102.forEach(function(turma102) { %>
+                 <tr>          
+                    <td><%= turma102.turma %></td>
+                    <td><%= turma102.nome %></td>
+                    <td><%= turma102.q1 %><%if(turma102.q1=="C"){total++}%></td>
+                    <td><%= turma102.q2 %><%if(turma102.q2=="E"){total++}%></td>
+                    <td><%= turma102.q3 %><%if(turma102.q3=="A"){total++}%></td>
+                    <td><%= turma102.q4 %><%if(turma102.q4=="C"){total++}%></td>
+                    <td><%= turma102.q5 %><%if(turma102.q5=="E"){total++}%></td>
+                    <td><%= turma102.q6 %><%if(turma102.q6=="A"){total++}%></td>
+                    <td><%= turma102.q7 %><%if(turma102.q7=="C"){total++}%></td>
+                    <td><%= turma102.q8 %><%if(turma102.q8=="D"){total++}%></td>
+                    <td><%= turma102.q9 %><%if(turma102.q9=="C"){total++}%></td>
+                    <td><%= turma102.q10 %><%if(turma102.q10=="C"){total++}%></td>
+                    <td><%= turma102.q11 %><%if(turma102.q11=="E"){total++}%></td>
+                    <td><%= turma102.q12 %><%if(turma102.q12=="B"){total++}%></td>
+                    <td><%= turma102.q13 %><%if(turma102.q13=="B"){total++}%></td>
+                    <td><%= turma102.q14 %><%if(turma102.q14=="E"){total++}%></td>
+                    <td><%= turma102.q15 %><%if(turma102.q15=="D"){total++}%></td>
+                    <td><%= turma102.q16 %><%if(turma102.q16=="C"){total++}%></td>
+                    <td><%= turma102.q17 %><%if(turma102.q17=="C"){total++}%></td>
+                    <td><%= turma102.q18 %><%if(turma102.q18=="E"){total++}%></td>
+                    <td><%= turma102.q19 %><%if(turma102.q19=="C"){total++}%></td>
+                    <td><%= turma102.q20 %><%if(turma102.q20=="C"){total++}%></td>
+                    <td><%= turma102.q21 %><%if(turma102.q21=="B"){total++}%></td>
+                    <td><%= turma102.q22 %><%if(turma102.q22=="D"){total++}%></td>
+                    <td><%= turma102.q23 %><%if(turma102.q23=="B"){total++}%></td>
+                    <td><%= turma102.q24 %><%if(turma102.q24=="A"){total++}%></td>
+                    <td><%= turma102.q25 %><%if(turma102.q25=="D"){total++}%></td>
+                    <td><%= turma102.q26 %><%if(turma102.q26=="A"){total++}%></td>
+                    <td><%= turma102.q27 %><%if(turma102.q27=="B"){total++}%></td>
+                    <td><%= turma102.q28 %><%if(turma102.q28=="D"){total++}%></td>
+                    <td><%= turma102.q29 %><%if(turma102.q29=="D"){total++}%></td>
+                    <td><%= turma102.q30 %><%if(turma102.q30=="C"){total++}%></td>
+                    <td><%= total %></td>
+                    <% total = 0 %>        
+                    <td class="align-middle">
+                        <form method="POST" action="/deletarturma102">
+                            <input type="hidden" name="id" value="<%=turma102.id%>">
+                            <button class="btn btn-danger">Deletar</button>
+                        </form>
+                    </td>
+                    
+                  </tr>
+                <% }); %> 
+            
+    </tbody>
+       
+</table>
+
+</div>
+<div class="container-sm">
+<div class="row">
+    <div class="col">
+        <h3 class="display-6 text-center">TURMA 303</h3>            
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-warning" id="esconder_turma303">Esconder</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-success" id="mostrar_turma303">Mostrar</button> 
+        </div>
+    </div>
+</div>    
+</div>
+
 <div class="container-sm fecha" id="gab_turma303">
         <table class="table table-dark tabela-container">
             <thead>
@@ -698,6 +917,14 @@
     var gabaritoturma64 = document.getElementById('gab_turma64');
     var btn_esconde_gab_turma64 = document.getElementById('esconder_turma64');
     var btn_mostra_gab_turma64 = document.getElementById('mostrar_turma64');
+
+    var gabaritoturma101 = document.getElementById('gab_turma101');
+    var btn_esconde_gab_turma101 = document.getElementById('esconder_turma101');
+    var btn_mostra_gab_turma101 = document.getElementById('mostrar_turma101');
+
+    var gabaritoturma102 = document.getElementById('gab_turma102');
+    var btn_esconde_gab_turma102 = document.getElementById('esconder_turma102');
+    var btn_mostra_gab_turma102 = document.getElementById('mostrar_turma102');
      
    
     btn_esconde_gab_turma303.addEventListener('click', function() {
@@ -746,6 +973,22 @@
 
     btn_mostra_gab_turma64.addEventListener('click', function() {
         gabaritoturma64.style.display = 'block';
+    });
+
+    btn_esconde_gab_turma101.addEventListener('click', function() {
+        gabaritoturma101.style.display = 'none';
+    });
+
+    btn_mostra_gab_turma101.addEventListener('click', function() {
+        gabaritoturma101.style.display = 'block';
+    });
+
+    btn_esconde_gab_turma102.addEventListener('click', function() {
+        gabaritoturma102.style.display = 'none';
+    });
+
+    btn_mostra_gab_turma102.addEventListener('click', function() {
+        gabaritoturma102.style.display = 'block';
     });
 
 
