@@ -712,8 +712,8 @@ app.get("/cicatriz", (req, res) => {
 
   //Rotas para receber os gabaritos das turmas 101
   app.post("/gabarito_101_bim_3", (req, res) => {
-    const respostasCorretas = ["A", "A", "D", "E", "C", "C", "C", "B", "D", "C", "D", 
-    "D", "E", "D", "D", "A", "E", "C", "B", "C", "B", "A", "D", "A", "A", "B", "C", "C", "C", "C"];
+    const respostasCorretas = ["C", "B", "A", "B", "A", "C", "C", "C", "B", "C", "B", 
+    "D", "B", "B", "D", "C", "B", "D", "D", "B", "D", "C", "C", "D", "C", "B", "B", "B", "D", "B"];
     var total = 0;
     var nome = req.body.name;
     var turma = req.body.turma;
@@ -841,8 +841,8 @@ app.get("/cicatriz", (req, res) => {
 
   //Rotas para receber os gabaritos das turmas 102
   app.post("/gabarito_102_bim_3", (req, res) => {
-    const respostasCorretas = ["A", "A", "D", "E", "C", "C", "C", "B", "D", "C", "D", 
-    "D", "E", "D", "D", "A", "E", "C", "B", "C", "B", "A", "D", "A", "A", "B", "C", "C", "C", "C"];
+    const respostasCorretas = ["C", "B", "A", "B", "A", "C", "C", "C", "B", "C", "B", 
+    "D", "B", "B", "D", "C", "B", "D", "D", "B", "D", "C", "C", "D", "C", "B", "B", "B", "D", "B"];
     var total = 0;
     var nome = req.body.name;
     var turma = req.body.turma;
