@@ -8,25 +8,39 @@
         <link href="/css/style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container-sm">
-            <header class="d-flex align-items-md-center bg-primary">
-                <img class="img-fluid rounded float-left" src="/img/logo_pmbv.png" alt="">
+        <div class="container-sm text-center bg-primary text-light">
+                   
                 <h1>PROFESSOR TONY COSTA</h1>
-                <img class="img-fluid rounded float-right" src="/img/logo América Sarmento.fw.png" alt="">       
-            </header>
         </div>
 
         <br>
         <br>
+        <div class="watermark-container">
+            <!-- Div da marca d'água -->
+            <div class="watermark"></div>
+        
 
-        <div class="container-sm">
-            <h6>Clique no botão com o nome da sua escola.</h6>
+        <div class="container">
+            <div class="text-center display-1">SEJA BEM VINDO!</div>
+            <br>
+            <div class="text-center h4">CLIQUE NO BOTÃO DA SUA ESCOLA...</div>
+
+        </div>
+
+        <div class="container-sm">           
             <div class="row">
                 <div class="col-6">
-                    <a class="btn btn-primary btn-block btn-lg" href="/juslany"><h2>JUSLANY FLORES</h2></a>   
+                   <a class="btn btn-primary btn-block btn-lg" href="/juslany">
+                        <img src="/img/juslany.png" alt="Imagem América" class="img-fluid" style="width: 150px; height: 150px;">
+                        <h2>JUSLANY FLORES</h2>
+                    </a>   
                 </div>
                 <div class="col-6">
-                    <a class="btn btn-primary btn-block btn-lg" href="/america"><h2>AMÉRICA SARMENTO</h2></a>
+                    
+                    <a class="btn btn-primary btn-block btn-lg" href="/america">
+                        <img src="/img/america.png" alt="Imagem América" class="img-fluid imagem_arredondada" style="width: 150px; height: 150px;">
+                        <h2>AMÉRICA SARMENTO</h2>
+                    </a>
                 </div>
             </div>
         </div>
@@ -34,12 +48,10 @@
         <br>
         <br>
 
-        <div class="container-sm">
-            <footer class="d-flex align-items-md-center bg-primary">
-                <div class="lead">PROFESSOR TONY COSTA</div>
-            </footer>
-        </div>
-    
+        <%- include('partials/footer.ejs') %>
+    </div>
+
+   
     </body>
     <script src="/js/jquery-3.2.1.slim.min.js"></script>
     <script src="/js/popper.min.js"></script>

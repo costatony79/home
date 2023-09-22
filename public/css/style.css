@@ -1,6 +1,6 @@
 body{
     margin: auto;
-    background-color:#fff; 
+    background-color:#fff;    
 }
 header{
     width: 100%;
@@ -74,7 +74,28 @@ th {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
     }
-.imagem_reduzida{
-    width: 40%;
-    height: 40%;
+.imagem_arredondada{
+    border-radius: 10%;
+  
+}
+.watermark-container {
+    /* Defina uma posição relativa para o container */
+    position: relative;
+    /* Defina uma altura mínima para visualizar a marca d'água */
+}
+
+.watermark {
+    /* Defina a imagem de marca d'água */
+    background-image: url('/img/eu.png');
+    /* Ajuste o tamanho da imagem conforme necessário */
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Posicione a div da marca d'água no início do lado esquerdo */
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 20%; /* Ajuste conforme necessário */
+    padding-bottom: 30%; /* Mantém a proporção da imagem */
+    /* Defina a ordem de empilhamento para ficar atrás do conteúdo */
+    z-index: -1;
 }
