@@ -75,7 +75,8 @@ th {
     background: linear-gradient(to right, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
     }
 .imagem_arredondada{
-    border-radius: 10%;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   
 }
 .watermark-container {
@@ -89,13 +90,14 @@ th {
     background-image: url('/img/eu.png');
     /* Ajuste o tamanho da imagem conforme necessário */
     background-size: contain;
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.3));
     background-repeat: no-repeat;
     /* Posicione a div da marca d'água no início do lado esquerdo */
     position: absolute;
-    top: 0;
+    top: -15%;
     left: 5%;
-    width: 20%; /* Ajuste conforme necessário */
-    padding-bottom: 30%; /* Mantém a proporção da imagem */
+    width: 50%; /* Ajuste conforme necessário */
+    padding-bottom: 20%; /* Mantém a proporção da imagem */
     /* Defina a ordem de empilhamento para ficar atrás do conteúdo */
     z-index: -1;
 }
