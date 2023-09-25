@@ -44,6 +44,11 @@ const Turma303_bim_3 = require("./database/Turma303_bim_3");
 //model do BD para receber as respostas do gabaritos da turma 303
 const Turma304_bim_3 = require("./database/Turma304_bim_3");
 
+//model do DB do trabaho do terceiro bimestre de geografia
+const Geografia3bim = require("./database/Geografia3Bim");
+
+//model do DB do trabaho do terceiro bimestre de história
+const Historia3bim = require("./database/Historia3Bim");
 
 //rota para a página inicial
 app.get("/", (req, res) => {
@@ -194,6 +199,11 @@ app.get("/cicatriz", (req, res) => {
     res.render("304_terceiro_bimestre");
  });
 
+ //Rotas para as páginas dos trabalhos do terceiro bimestre 303
+    app.get("/geografiaBim3", (req, res) => {
+        res.render("geografia3Bim");
+     });
+//************************************************************* */
   //Rotas para receber os gabaritos das turmas 61
   app.post("/gabarito_61_bim_3", (req, res) => {
     const respostasCorretas = ["C", "E", "A", "C", "E", "A", "C", "D", "C", "C", "E", 
@@ -968,8 +978,8 @@ app.get("/cicatriz", (req, res) => {
     }
 });
 
-    //Rotas para receber os gabaritos das turmas 303
-      app.post("/gabarito_303_bim_3", (req, res) => {
+//Rotas para receber os gabaritos das turmas 303
+app.post("/gabarito_303_bim_3", (req, res) => {
         const respostasCorretas = ["A", "A", "D", "E", "C", "C", "C", "B", "D", "C", "D", 
         "D", "E", "D", "D", "A", "E", "C", "B", "C", "B", "A", "D", "A", "A", "B", "C", "C", "C", "C"];
         var total = 0;
@@ -1095,10 +1105,10 @@ app.get("/cicatriz", (req, res) => {
                 });
             });
         }
-    });
+});
 
-        //Rotas para receber os gabaritos das turmas 303
-        app.post("/gabarito_304_bim_3", (req, res) => {
+//Rotas para receber os gabaritos das turmas 303
+app.post("/gabarito_304_bim_3", (req, res) => {
             const respostasCorretas = ["A", "A", "D", "E", "C", "C", "C", "B", "D", "C", "D", 
             "D", "E", "D", "D", "A", "E", "C", "B", "C", "B", "A", "D", "A", "A", "B", "C", "C", "C", "C"];
             var total = 0;
@@ -1224,8 +1234,89 @@ app.get("/cicatriz", (req, res) => {
                     });
                 });
             }
-        });
+});
 
+//Rotas para receber os gabaritos do trabalho de geografia
+app.post("/gabarito_geografia3Bim", (req, res) => {
+            const respostasCorretas = ["A", "A", "D", "E", "C", "C", "C", "B", "D", "C", "D", "D", "E", "D", "D"];
+            var total = 0;
+            var nome = req.body.name;
+            var q1 = req.body.q1;
+            var q2 = req.body.q2;
+            var q3 = req.body.q3;
+            var q4 = req.body.q4;
+            var q5 = req.body.q5;
+            var q6 = req.body.q6;
+            var q7 = req.body.q7;
+            var q8 = req.body.q8;
+            var q9 = req.body.q9;
+            var q10 = req.body.q10;
+            var q11 = req.body.q11;
+            var q12 = req.body.q12;
+            var q13 = req.body.q13;
+            var q14 = req.body.q14;
+            var q15 = req.body.q15;
+            
+            const respostasEnviadas = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15];
+            
+            if(nome==""||turma==""||q1==null||q2==null||q3==null||q4==null||q5==null||q6==null
+            ||q7==null||q8==null||q9==null||q10==null||q11==null||q12==null||q13==null||q14==null||q15==null){
+                notifier.notify({
+                    title: 'RESPONDA TODAS AS PERGUNTAS',
+                    message: 'Você não pode deixar nenhum campo em branco.'
+                  });
+                res.redirect("geografia3Bim");
+            }else {
+           
+                Geografia3bim.create({
+                    nome: nome.toUpperCase(),
+                    turma: turma,
+                    q1: q1,
+                    q2: q2,
+                    q3: q3,
+                    q4: q4,
+                    q5: q5,
+                    q6: q6,
+                    q7: q7,
+                    q8: q8,
+                    q9: q9,
+                    q10: q10,
+                    q11: q11,
+                    q12: q12,
+                    q13: q13,
+                    q14: q14,
+                    q15: q15
+                }).then(() => {
+                    notifier.notify({
+                        title: 'GABARITO SALVO COM SUCESSO',
+                        message: 'Parabéns você preencheu tudo.'
+                      });
+                      res.render("confirmacao", {
+                        nome: nome,
+                        turma: turma,
+                        q1: q1,
+                        q2: q2,
+                        q3: q3,
+                        q4: q4,
+                        q5: q5,
+                        q6: q6,
+                        q7: q7,
+                        q8: q8,
+                        q9: q9,
+                        q10: q10,
+                        q11: q11,
+                        q12: q12,
+                        q13: q13,
+                        q14: q14,
+                        q15: q15,
+                        res: respostasCorretas,
+                        respostas: respostasEnviadas
+                    });
+                });
+            }
+});
+
+//****************************************************************************************** */
     //rota para apagar um registro da tabela da 61
     app.post("/deletarturma61", (req, res) => {
         var id = req.body.id;
