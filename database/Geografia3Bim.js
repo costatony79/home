@@ -6,10 +6,6 @@ const Geografia3bim = connection.define("Geografia3bim", {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    turma:{
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
     q1:{
         type: Sequelize.STRING,
         allowNull: false

@@ -6,10 +6,6 @@ const Historia3bim = connection.define("Historia3bim", {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    turma:{
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
     q1:{
         type: Sequelize.STRING,
         allowNull: false

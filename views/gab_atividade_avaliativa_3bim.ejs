@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>GABARITOS</title>
+</head>
+<body onload="fechaTudo()">
+<hr>
+<div class="container-sm">
+    <div class="h1 text-center bg-primary text-light">ATIVIDADES AVALIATIVA DO TERCEIRO BIMESTRE</div>
+</div>
+<hr>
+<h1 class="text-center display-5">5º ANO A</h1>
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="display-6 text-center">GEOGRAFIA</h3>            
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning" id="esconder_geografia">Esconder</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-success" id="mostrar_geografia">Mostrar</button> 
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container fecha" id="gab_geografia">
+        <table class="table table-dark tabela-container">
+            <thead>
+                <th>Nome</th>           
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>NOTA</th>
+                <th>AÇÃO</th>
+
+            </thead>
+            
+                <tbody>         
+                
+                    <% geografia.forEach(function(geografia) { %>
+                         <tr>          
+                            <td><%= geografia.nome %></td>
+                            <td><%= geografia.q1 %><%if(geografia.q1=="A"){total++}%></td>
+                            <td><%= geografia.q2 %><%if(geografia.q2=="B"){total++}%></td>
+                            <td><%= geografia.q3 %><%if(geografia.q3=="B"){total++}%></td>
+                            <td><%= geografia.q4 %><%if(geografia.q4=="B"){total++}%></td>
+                            <td><%= geografia.q5 %><%if(geografia.q5=="B"){total++}%></td>
+                            <td><%= geografia.q6 %><%if(geografia.q6=="A"){total++}%></td>
+                            <td><%= geografia.q7 %><%if(geografia.q7=="C"){total++}%></td>
+                            <td><%= geografia.q8 %><%if(geografia.q8=="A"){total++}%></td>
+                            <td><%= geografia.q9 %><%if(geografia.q9=="A"){total++}%></td>
+                            <td><%= geografia.q10 %><%if(geografia.q10=="A"){total++}%></td>
+                            <td><%= geografia.q11 %><%if(geografia.q11=="B"){total++}%></td>
+                            <td><%= geografia.q12 %><%if(geografia.q12=="D"){total++}%></td>
+                            <td><%= geografia.q13 %><%if(geografia.q13=="A"){total++}%></td>
+                            <td><%= geografia.q14 %><%if(geografia.q14=="A"){total++}%></td>
+                            <td><%= geografia.q15 %><%if(geografia.q15=="A"){total++}%></td>
+                            <td><%= total * 2 %></td>
+                            <% total = 0 %>        
+                            <td class="align-middle">
+                                <form method="POST" action="/deletargeografia3Bim">
+                                    <input type="hidden" name="id" value="<%=geografia.id%>">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </td>
+                            
+                          </tr>
+                        <% }); %> 
+                    
+            </tbody>
+           
+    </table>
+
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="display-6 text-center">HISTÓRIA</h3>            
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning" id="esconder_historia">Esconder</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-success" id="mostrar_historia">Mostrar</button> 
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container fecha" id="gab_historia">
+        <table class="table table-dark tabela-container">
+            <thead>
+                <th>Nome</th>           
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>NOTA</th>
+                <th>AÇÃO</th>
+
+            </thead>
+            
+                <tbody>         
+                
+                    <% historia.forEach(function(historia) { %>
+                         <tr>          
+                            <td><%= historia.nome %></td>
+                            <td><%= historia.q1 %><%if(historia.q1=="A"){total++}%></td>
+                            <td><%= historia.q2 %><%if(historia.q2=="B"){total++}%></td>
+                            <td><%= historia.q3 %><%if(historia.q3=="B"){total++}%></td>
+                            <td><%= historia.q4 %><%if(historia.q4=="B"){total++}%></td>
+                            <td><%= historia.q5 %><%if(historia.q5=="B"){total++}%></td>
+                            <td><%= historia.q6 %><%if(historia.q6=="A"){total++}%></td>
+                            <td><%= historia.q7 %><%if(historia.q7=="C"){total++}%></td>
+                            <td><%= historia.q8 %><%if(historia.q8=="A"){total++}%></td>
+                            <td><%= historia.q9 %><%if(historia.q9=="A"){total++}%></td>
+                            <td><%= historia.q10 %><%if(historia.q10=="A"){total++}%></td>
+                            <td><%= historia.q11 %><%if(historia.q11=="B"){total++}%></td>
+                            <td><%= historia.q12 %><%if(historia.q12=="D"){total++}%></td>
+                            <td><%= historia.q13 %><%if(historia.q13=="A"){total++}%></td>
+                            <td><%= historia.q14 %><%if(historia.q14=="A"){total++}%></td>
+                            <td><%= historia.q15 %><%if(historia.q15=="A"){total++}%></td>
+                            <td><%= total * 2 %></td>
+                            <% total = 0 %>        
+                            <td class="align-middle">
+                                <form method="POST" action="/deletarhistoria3Bim">
+                                    <input type="hidden" name="id" value="<%=historia.id%>">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </td>
+                            
+                          </tr>
+                        <% }); %> 
+                    
+            </tbody>
+           
+    </table>
+
+</div>
+
+</body>
+<script>
+
+    var gabaritogeografia = document.getElementById('gab_geografia');
+    var btn_esconde_gab_geografia = document.getElementById('esconder_geografia');
+    var btn_mostra_gab_geografia = document.getElementById('mostrar_geografia');
+
+    var gabaritohistoria = document.getElementById('gab_historia');
+    var btn_esconde_gab_historia = document.getElementById('esconder_historia');
+    var btn_mostra_gab_historia = document.getElementById('mostrar_historia');
+
+
+    btn_esconde_gab_geografia.addEventListener('click', function() {
+        gabaritogeografia.style.display = 'none';
+    });
+
+    btn_mostra_gab_geografia.addEventListener('click', function() {
+        gabaritogeografia.style.display = 'block';
+    });
+
+    btn_esconde_gab_historia.addEventListener('click', function() {
+        gabaritohistoria.style.display = 'none';
+    });
+
+    btn_mostra_gab_historia.addEventListener('click', function() {
+        gabaritohistoria.style.display = 'block';
+    });
+
+    
+//Fecha todas os containers da classe fecha
+    window.addEventListener('load', function() {
+    var elementosParaEsconder = document.querySelectorAll('.fecha');
+    
+        elementosParaEsconder.forEach(function(elemento) {
+            elemento.style.display = 'none';
+        });
+    });
+
+
+</script>
+
+
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/popper.min.js"></script>
+</html>

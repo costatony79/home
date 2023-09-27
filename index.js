@@ -203,6 +203,11 @@ app.get("/cicatriz", (req, res) => {
     app.get("/geografiaBim3", (req, res) => {
         res.render("geografia3Bim");
      });
+
+      //Rotas para as páginas dos trabalhos do terceiro bimestre 303
+    app.get("/historiaBim3", (req, res) => {
+        res.render("historia3Bim");
+     });
 //************************************************************* */
   //Rotas para receber os gabaritos das turmas 61
   app.post("/gabarito_61_bim_3", (req, res) => {
@@ -1238,7 +1243,7 @@ app.post("/gabarito_304_bim_3", (req, res) => {
 
 //Rotas para receber os gabaritos do trabalho de geografia
 app.post("/gabarito_geografia3Bim", (req, res) => {
-            const respostasCorretas = ["A", "A", "D", "E", "C", "C", "C", "B", "D", "C", "D", "D", "E", "D", "D"];
+            const respostasCorretas = ["A", "B", "B", "B", "B", "A", "C", "A", "A", "A", "B", "D", "A", "A", "A"];
             var total = 0;
             var nome = req.body.name;
             var q1 = req.body.q1;
@@ -1259,7 +1264,7 @@ app.post("/gabarito_geografia3Bim", (req, res) => {
             
             const respostasEnviadas = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15];
             
-            if(nome==""||turma==""||q1==null||q2==null||q3==null||q4==null||q5==null||q6==null
+            if(nome==""||q1==null||q2==null||q3==null||q4==null||q5==null||q6==null
             ||q7==null||q8==null||q9==null||q10==null||q11==null||q12==null||q13==null||q14==null||q15==null){
                 notifier.notify({
                     title: 'RESPONDA TODAS AS PERGUNTAS',
@@ -1270,7 +1275,6 @@ app.post("/gabarito_geografia3Bim", (req, res) => {
            
                 Geografia3bim.create({
                     nome: nome.toUpperCase(),
-                    turma: turma,
                     q1: q1,
                     q2: q2,
                     q3: q3,
@@ -1291,9 +1295,8 @@ app.post("/gabarito_geografia3Bim", (req, res) => {
                         title: 'GABARITO SALVO COM SUCESSO',
                         message: 'Parabéns você preencheu tudo.'
                       });
-                      res.render("confirmacao", {
+                      res.render("confirmacao15", {
                         nome: nome,
-                        turma: turma,
                         q1: q1,
                         q2: q2,
                         q3: q3,
@@ -1314,6 +1317,84 @@ app.post("/gabarito_geografia3Bim", (req, res) => {
                     });
                 });
             }
+});
+
+//Rotas para receber os gabaritos do trabalho de geografia
+app.post("/gabarito_historia3Bim", (req, res) => {
+    const respostasCorretas = ["A", "B", "B", "B", "B", "A", "C", "A", "A", "A", "B", "D", "A", "A", "A"];
+    var total = 0;
+    var nome = req.body.name;
+    var q1 = req.body.q1;
+    var q2 = req.body.q2;
+    var q3 = req.body.q3;
+    var q4 = req.body.q4;
+    var q5 = req.body.q5;
+    var q6 = req.body.q6;
+    var q7 = req.body.q7;
+    var q8 = req.body.q8;
+    var q9 = req.body.q9;
+    var q10 = req.body.q10;
+    var q11 = req.body.q11;
+    var q12 = req.body.q12;
+    var q13 = req.body.q13;
+    var q14 = req.body.q14;
+    var q15 = req.body.q15;
+    
+    const respostasEnviadas = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15];
+    
+    if(nome==""||q1==null||q2==null||q3==null||q4==null||q5==null||q6==null
+    ||q7==null||q8==null||q9==null||q10==null||q11==null||q12==null||q13==null||q14==null||q15==null){
+        notifier.notify({
+            title: 'RESPONDA TODAS AS PERGUNTAS',
+            message: 'Você não pode deixar nenhum campo em branco.'
+          });
+        res.redirect("historia3Bim");
+    }else {
+   
+        Historia3bim.create({
+            nome: nome.toUpperCase(),
+            q1: q1,
+            q2: q2,
+            q3: q3,
+            q4: q4,
+            q5: q5,
+            q6: q6,
+            q7: q7,
+            q8: q8,
+            q9: q9,
+            q10: q10,
+            q11: q11,
+            q12: q12,
+            q13: q13,
+            q14: q14,
+            q15: q15
+        }).then(() => {
+            notifier.notify({
+                title: 'GABARITO SALVO COM SUCESSO',
+                message: 'Parabéns você preencheu tudo.'
+              });
+              res.render("confirmacao15", {
+                nome: nome,
+                q1: q1,
+                q2: q2,
+                q3: q3,
+                q4: q4,
+                q5: q5,
+                q6: q6,
+                q7: q7,
+                q8: q8,
+                q9: q9,
+                q10: q10,
+                q11: q11,
+                q12: q12,
+                q13: q13,
+                q14: q14,
+                q15: q15,
+                res: respostasCorretas,
+                respostas: respostasEnviadas
+            });
+        });
+    }
 });
 
 //****************************************************************************************** */
@@ -1442,6 +1523,35 @@ app.post("/deletarturma304", (req, res) => {
     }
     
     });
+//rota para apagar um registro da tabela Geografia 3 Bim
+app.post("/deletargeografia3Bim", (req, res) => {
+            var id = req.body.id;
+            if(id != undefined){
+                Geografia3bim.destroy({
+                    where: {
+                        id: id
+                    }
+                    
+                }).then(()=>{
+                    res.redirect("/gab_atividade_avaliativa_3bim");
+                });
+            }
+    });
+//rota para apagar um registro da tabela História 3 Bim
+app.post("/deletarhistoria3Bim", (req, res) => {
+    var id = req.body.id;
+    if(id != undefined){
+        Historia3bim.destroy({
+            where: {
+                id: id
+            }
+            
+        }).then(()=>{
+            res.redirect("/gab_atividade_avaliativa_3bim");
+        });
+    }
+});
+
 //rota para exibição da página com todos os gabaritos
 app.get("/gabaritos", (req, res) => {
     var total = 0;
@@ -1527,6 +1637,45 @@ app.get("/gabaritos", (req, res) => {
             turma62: gabarito_turma62,
             turma61: gabarito_turma61,
             respostasTerceiroAnobim3: respostasTerceiroAnobim3
+        }); 
+    });
+});
+
+//rota para exibição da página com os gabaritos da atividade avaliativa do terceiro bimestre 5º A
+app.get("/gab_atividade_avaliativa_3bim", (req, res) => {
+    var total = 0;
+    var nome = req.body.name;
+    var q1 = req.body.q1;
+    var q2 = req.body.q2;
+    var q3 = req.body.q3;
+    var q4 = req.body.q4;
+    var q5 = req.body.q5;
+    var q6 = req.body.q6;
+    var q7 = req.body.q7;
+    var q8 = req.body.q8;
+    var q9 = req.body.q9;
+    var q10 = req.body.q10;
+    var q11 = req.body.q11;
+    var q12 = req.body.q12;
+    var q13 = req.body.q13;
+    var q14 = req.body.q14;
+    var q15 = req.body.q15;
+
+    var gabarito_historia;
+
+    const  respostas = [nome, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15];
+
+    Historia3bim.findAll({order: [['nome', 'ASC']]}).then(historia => {
+        gabarito_historia = historia;
+    });
+         
+    Geografia3bim.findAll({order: [['nome', 'ASC']]}).then(geografia => {
+        res.render("gab_atividade_avaliativa_3bim", {
+            nome: nome,
+            total: total,
+            geografia: geografia,
+            historia: gabarito_historia,
+            respostas: respostas
         }); 
     });
 });
