@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 
 //conexão com o banco de dados
 const connection = require("./database/database");
+const connection_simulados = require("./database/database_simulados");
 
 //model do BD para receber as respostas do gabaritos da turma 61
 const Turma61_bim_3 = require("./database/Turma61_bim_3");
@@ -49,6 +50,9 @@ const Geografia3bim = require("./database/Geografia3Bim");
 
 //model do DB do trabaho do terceiro bimestre de história
 const Historia3bim = require("./database/Historia3Bim");
+
+//model do DB do trabaho do terceiro bimestre de história
+const Primeiro_simulado = require("./database/Primeiro_simulado")
 
 //rota para a página inicial
 app.get("/", (req, res) => {
