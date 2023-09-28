@@ -1321,7 +1321,7 @@ app.post("/gabarito_geografia3Bim", (req, res) => {
 
 //Rotas para receber os gabaritos do trabalho de geografia
 app.post("/gabarito_historia3Bim", (req, res) => {
-    const respostasCorretas = ["A", "B", "B", "B", "B", "A", "C", "A", "A", "A", "B", "D", "A", "A", "A"];
+    const respostasCorretas = ["A", "A", "C", "B", "B", "A", "C", "B", "B", "A", "B", "D", "C", "A", "B"];
     var total = 0;
     var nome = req.body.name;
     var q1 = req.body.q1;
