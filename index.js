@@ -217,6 +217,16 @@ app.get("/cicatriz", (req, res) => {
     app.get("/historiaBim3", (req, res) => {
         res.render("historia3Bim");
      });
+
+         //Rotas para as páginas dos simulados
+    app.get("/simulados", (req, res) => {
+        res.render("simulados");
+     });
+
+            //Rotas para as páginas dos simulados
+    app.get("/primeiro_simulado", (req, res) => {
+        res.render("primeiro_simulado");
+     });
 //************************************************************* */
   //Rotas para receber os gabaritos das turmas 61
   app.post("/gabarito_61_bim_3", (req, res) => {
