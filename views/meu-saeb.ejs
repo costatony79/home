@@ -9,43 +9,24 @@
 
     </head>
     <body>
-        <div class="container-sm">
-            <header class="d-flex align-items-md-center bg-primary">
-                <img class="img-fluid rounded float-left" src="/img/logo_pmbv.png" alt="">
-                <h3 class="display-5">ESCOLA MUNICIPAL JUSLANY DE SOUZA FLORES</h3>
-            </header>
+        <div class="container-fluid bg-primary">
+            <%- include('partials/nav_principal.ejs') %>
         </div>
 
         <div class="container-sm">
             <div class="row">
-                <div class="col-6">
+                <div class="col">
                     <table class="table table-light">
+                        <thead>
+                            <th>
+                                PROJETO MEU SAEB DIGITAL
+                            </th>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td><h1 class="display-6 text-center">PRIMEIRO SEMESTRE</h1></td>
-                            </tr>
-                            <tr>
-                                <td><img class="img-fluid" src="/img/thumb-meu-saeb-digital.png" alt=""></td>
-                            </tr>
-                            <tr>
-                                <td><a class="btn btn-primary" href="http://201.51.209.54:3000/">ATIVIDADES DO PRIMEIRO SEMESTRE</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                </div>
-
-                <div class="col-6">
-                    <table class="table table-light">
-                        <tbody>
-                            <tr>
-                                <td><h1 class="display-6 text-center">SEGUNDO SEMESTRE</h1></td>
-                            </tr>
-                            <tr>
-                                <td><img class="img-fluid" src="/img/thumb-segundo-semestre.png" alt=""></td>
-                            </tr>
-                            <tr>
-                                <td><a class="btn btn-primary" href="http://201.51.209.54:1519/">ATIVIDADES DO SEGUNDO SEMESTRE</a></td>
+                                <div class="text-center">
+                                    <a class="btn btn-primary" href="http://201.51.209.54:1519/"><img class="img-fluid" src="/img/thumb-segundo-semestre.png" alt=""></a></td>
+                                </div>
                             </tr>
                         </tbody>
                     </table>
