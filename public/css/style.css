@@ -112,4 +112,7 @@ th {
     /* Defina a ordem de empilhamento para ficar atrás do conteúdo */
     z-index: -1;
 }
+.operacao{
+    font-size: 5em;
+}
 
