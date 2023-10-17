@@ -54,6 +54,9 @@ const Historia3bim = require("./database/Historia3Bim");
 //model do DB do trabaho do terceiro bimestre de história
 const Primeiro_simulado = require("./database/Primeiro_simulado")
 
+//model do DB do trabaho do terceiro bimestre de história
+const Segundo_simulado = require("./database/Segundo_simulado")
+
 //rota para a página inicial
 app.get("/", (req, res) => {
     res.render("index");
@@ -223,9 +226,14 @@ app.get("/cicatriz", (req, res) => {
         res.render("simulados");
      });
 
-            //Rotas para as páginas dos simulados
+//Rotas para as páginas dos simulados
     app.get("/primeiro_simulado", (req, res) => {
         res.render("primeiro_simulado");
+     });
+
+     //Rotas para as páginas dos simulados
+    app.get("/segundo_simulado", (req, res) => {
+        res.render("segundo_simulado");
      });
 //************************************************************* */
   //Rotas para receber os gabaritos das turmas 61
@@ -1626,13 +1634,232 @@ app.post("/envio_primeiro_simulado", (req, res) => {
     }
 });
 
+//Rotas para receber os gabaritos do segundo simulado
+app.post("/envio_segundo_simulado", (req, res) => {
+    const respostasLinguaPortuguesa = [
+        "A", "B", "C",
+        "A", "D", "B",
+        "A", "C", "B",
+        "B", "D",
+        "A", "B", "C",
+        "C", "B", "D",
+        "D", "C", "B",
+        "C", "A"];
+    const respostasMatematica = [
+        "C", "B", "B",
+        "C", "A", "A",
+        "D", "C", "C",
+        "B", "C",
+        "B", "A", "A",
+        "C", "B", "A",
+        "D", "C", "C",
+        "C", "C"];
+    var nota_matematica = 0;
+    var nota_lingua_portuguesa = 0;
+    var nome = req.body.name;
+    var q1 = req.body.q1;
+    var q2 = req.body.q2;
+    var q3 = req.body.q3;
+    var q4 = req.body.q4;
+    var q5 = req.body.q5;
+    var q6 = req.body.q6;
+    var q7 = req.body.q7;
+    var q8 = req.body.q8;
+    var q9 = req.body.q9;
+    var q10 = req.body.q10;
+    var q11 = req.body.q11;
+    var q12 = req.body.q12;
+    var q13 = req.body.q13;
+    var q14 = req.body.q14;
+    var q15 = req.body.q15;
+    var q16 = req.body.q16;
+    var q17 = req.body.q17;
+    var q18 = req.body.q18;
+    var q19 = req.body.q19;
+    var q20 = req.body.q20;
+    var q21 = req.body.q21;
+    var q22 = req.body.q22;
+    var q23 = req.body.q23;
+    var q24 = req.body.q24;
+    var q25 = req.body.q25;
+    var q26 = req.body.q26;
+    var q27 = req.body.q27;
+    var q28 = req.body.q28;
+    var q29 = req.body.q29;
+    var q30 = req.body.q30;
+    var q31 = req.body.q31;
+    var q32 = req.body.q32;
+    var q33 = req.body.q33;
+    var q34 = req.body.q34;
+    var q35 = req.body.q35;
+    var q36 = req.body.q36;
+    var q37 = req.body.q37;
+    var q38 = req.body.q38;
+    var q39 = req.body.q39;
+    var q40 = req.body.q40;
+    var q41 = req.body.q41;
+    var q42 = req.body.q42;
+    var q43 = req.body.q43;
+    var q44 = req.body.q44;
+    const respostasEnviadasLinguaPortuguesa = [
+        q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, 
+        q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, 
+        q21, q22
+    ];
+
+    const respostasEnviadasMatematica = [
+        q23, q24, q25, q26, q27, q28, q29, q30, 
+        q31, q32, q33, q34, q35, q36, q37, q38, q39, q40, 
+        q41, q42, q43, q44
+    ];
+
+    for (let i = 0; i < respostasEnviadasLinguaPortuguesa.length; i++) {
+        if (respostasEnviadasLinguaPortuguesa[i].toUpperCase() === respostasLinguaPortuguesa[i]) {
+            nota_lingua_portuguesa++;
+        }
+    };
+
+    for (let i = 0; i < respostasEnviadasMatematica.length; i++) {
+        if (respostasEnviadasMatematica[i].toUpperCase() === respostasMatematica[i]) {
+            nota_matematica++;
+        }
+    };
+    
+    if(nome=="" || q1==null || q2==null || q3==null || q4==null || q5==null || q6==null
+    || q7==null || q8==null || q9==null || q10==null || q11==null || q12==null || q13==null || q14==null || q15==null
+    || q16==null || q17==null || q18==null || q19==null || q20==null || q21==null || q22==null || q23==null || q24==null
+    || q25==null || q26==null || q27==null || q28==null || q29==null || q30==null || q31==null || q32==null || q33==null
+    || q34==null || q35==null || q36==null || q37==null || q38==null || q39==null || q40==null || q41==null || q42==null
+    || q43==null || q44==null){
+        notifier.notify({
+            title: 'RESPONDA TODAS AS PERGUNTAS',
+            message: 'Você não pode deixar nenhum campo em branco.'
+          });
+        res.redirect("primeiro_simulado");
+    }else {
+   
+        Segundo_simulado.create({
+            nome: nome.toUpperCase(),
+            q1: q1,
+            q2: q2,
+            q3: q3,
+            q4: q4,
+            q5: q5,
+            q6: q6,
+            q7: q7,
+            q8: q8,
+            q9: q9,
+            q10: q10,
+            q11: q11,
+            q12: q12,
+            q13: q13,
+            q14: q14,
+            q15: q15,
+            q16: q16,
+            q17: q17,
+            q18: q18,
+            q19: q19,
+            q20: q20,
+            q21: q21,
+            q22: q22,
+            q23: q23,
+            q24: q24,
+            q25: q25,
+            q26: q26,
+            q27: q27,
+            q28: q28,
+            q29: q29,
+            q30: q30,
+            q31: q31,
+            q32: q32,
+            q33: q33,
+            q34: q34,
+            q35: q35,
+            q36: q36,
+            q37: q37,
+            q38: q38,
+            q39: q39,
+            q40: q40,
+            q41: q41,
+            q42: q42,
+            q43: q43,
+            q44: q44,
+            nota_lingua_portuguesa: nota_lingua_portuguesa,
+            nota_matematica: nota_matematica
+        }).then(() => {
+            notifier.notify({
+                title: 'GABARITO SALVO COM SUCESSO',
+                message: 'Parabéns você preencheu tudo.'
+              });
+              res.render("confirmacao_simulado", {
+                nome: nome,
+                q1: q1,
+                q2: q2,
+                q3: q3,
+                q4: q4,
+                q5: q5,
+                q6: q6,
+                q7: q7,
+                q8: q8,
+                q9: q9,
+                q10: q10,
+                q11: q11,
+                q12: q12,
+                q13: q13,
+                q14: q14,
+                q15: q15,
+                q16: q16,
+                q17: q17,
+                q18: q18,
+                q19: q19,
+                q20: q20,
+                q21: q21,
+                q22: q22,
+                q23: q23,
+                q24: q24,
+                q25: q25,
+                q26: q26,
+                q27: q27,
+                q28: q28,
+                q29: q29,
+                q30: q30,
+                q31: q31,
+                q32: q32,
+                q33: q33,
+                q34: q34,
+                q35: q35,
+                q36: q36,
+                q37: q37,
+                q38: q38,
+                q39: q39,
+                q40: q40,
+                q41: q41,
+                q42: q42,
+                q43: q43,
+                q44: q44,
+                nota_lp: nota_lingua_portuguesa,
+                nota_mat: nota_matematica
+            });
+        });
+    }
+});
+
+
 //Rotas para receber os gabaritos doS SIMULADOS
 app.get("/gabarito_simulados", (req, res) => {
+
+    var seg_simulado;
+
+    Segundo_simulado.findAll({order: [['nome', 'ASC']]}).then(segundo_simulado => {
+        seg_simulado = segundo_simulado;
+    });
+
 
     Primeiro_simulado.findAll({order: [['nome', 'ASC']]}).then(primeiro_simulado => {
         res.render("gabarito_simulados", {
 
-            primeiro_simulado: primeiro_simulado
+            primeiro_simulado: primeiro_simulado,
+            segundo_simulado: seg_simulado
      
         }); 
     });
@@ -1800,6 +2027,21 @@ app.post("/deletarsimulados", (req, res) => {
     var id = req.body.id;
     if(id != undefined){
         Primeiro_simulado.destroy({
+            where: {
+                id: id
+            }
+            
+        }).then(()=>{
+            res.redirect("/gabarito_simulados");
+        });
+    }
+});
+
+//rota para apagar um registro da tabela História 3 Bim
+app.post("/deletar_segundo_simulado", (req, res) => {
+    var id = req.body.id; 
+    if(id != undefined){
+        Segundo_simulado.destroy({
             where: {
                 id: id
             }
