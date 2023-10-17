@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>GABARITOS</title>
+</head>
+<body onload="fechaTudo()">
+<hr>
+<div class="container-sm">
+    <div class="h1 text-center bg-primary text-light">GABARITO SIMULADOS</div>
+</div>
+
+<div class="container-sm">
+    <div class="row">
+        <div class="col">
+            <h3 class="display-6 text-center">PRIMEIRO SIMULADO</h3>            
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning" id="esconder_primeiro_simulado">Esconder</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-success" id="mostrar_primeiro_simulado">Mostrar</button> 
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container" id="gab_primeiro_simulado">
+        <table class="table table-dark tabela-container">
+            <thead>
+                <th>NOME</th>           
+                <th>LÍNGUA PORTUGUESA</th>
+                <th>MATEMÁTICA</th>
+                <th>AÇÃO</th>
+
+            </thead>
+            
+                <tbody>         
+                
+                    <% primeiro_simulado.forEach(function(primeiro_simulado) { %>
+                         <tr>          
+                            <td><%= primeiro_simulado.nome %></td>
+                            <td><%= primeiro_simulado.nota_lingua_portuguesa %></td>
+                            <td><%= primeiro_simulado.nota_matematica %></td>
+                            
+                            <td class="align-middle">
+                                <form method="POST" action="/deletarsimulados">
+                                    <input type="hidden" name="id" value="<%=primeiro_simulado.id%>">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </td>
+                            
+                          </tr>
+                        <% }); %> 
+                    
+            </tbody>
+           
+    </table>
+
+</div>
+
+</body>
+<script>
+    var gabaritoprimeiro_simulado = document.getElementById('gab_primeiro_simulado');
+    var btn_esconde_gab_primeiro_simulado = document.getElementById('esconder_primeiro_simulado');
+    var btn_mostra_gab_primeiro_simulado = document.getElementById('mostrar_primeiro_simulado');
+     
+    btn_esconde_gab_primeiro_simulado.addEventListener('click', function() {
+        gabaritoprimeiro_simulado.style.display = 'none';
+    });
+
+    btn_mostra_gab_primeiro_simulado.addEventListener('click', function() {
+        gabaritoprimeiro_simulado.style.display = 'block';
+    });
+    
+
+
+</script>
+
+
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/popper.min.js"></script>
+</html>

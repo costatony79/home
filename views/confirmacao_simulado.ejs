@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="wnameth=device-wnameth, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>SIMULADO</title>
+    </head>
+<body>
+    <div class="container">
+        <div class="display-3 text-center">RESULTADO SIMULADO</div>
+        <hr>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nome: </span>
+            <div class="display-4"><%= nome.toUpperCase() %></div>
+          </div>      
+        <hr>
+    </div> 
+    <div class="container">
+        <table class="table table-dark table-hover">
+            <thead>           
+                <th class="display-4">LÍNGUA PORTUGUESA</th>
+                <th class="display-4">MATEMÁTICA</th>
+            </thead>
+            <br>
+            <thead>           
+                <th>ACERTOS</th>
+                <th>ACERTOS</th>
+            </thead>
+            <tbody>                        
+                <td class="display-4"><%= nota_lp %></td>
+                <td class="display-4"><%= nota_mat %></td>
+           </tbody>
+           <thead>           
+            <th class="display-5">NOTA</th>
+            <th class="display-5">NOTA</th>
+        </thead>
+           <tbody>                        
+            <td class="display-4"><%= Math.floor(nota_lp * 100 / 22)/1 %></td>
+            <td class="display-4"><%= Math.floor(nota_mat * 100 / 22)/1 %></td>
+       </tbody>
+    </table>
+    </div>
+
+      
+</body>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/popper.min.js"></script>
+<script src="/js/js.js"></script>   
+
+</html>

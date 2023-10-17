@@ -94,10 +94,6 @@ const Primeiro_simulado = connection_simulados.define("Primeiro_simulado", {
         type: Sequelize.STRING,
         allowNull: false
     },
-    notalp:{
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
     q23:{
         type: Sequelize.STRING,
         allowNull: false
@@ -186,7 +182,11 @@ const Primeiro_simulado = connection_simulados.define("Primeiro_simulado", {
         type: Sequelize.STRING,
         allowNull: false
     },
-    notamat:{
+    nota_matematica:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    nota_lingua_portuguesa:{
         type: Sequelize.INTEGER,
         allowNull: false
     }
