@@ -1866,18 +1866,22 @@ app.get("/gabarito_simulados", (req, res) => {
     
 });
 
-//Rotas para receber os gabaritos doS SIMULADOS
+//Rotas para receber os gabaritos doS SIMULADOS DE LÍNGUA PORTUGUESA
 app.get("/gabarito_simulado_lp", (req, res) => {
-
-
     Primeiro_simulado.findAll({order: [['nome', 'ASC']]}).then(primeiro_simulado => {
         res.render("gabarito_simulado_lp", {
-
-            primeiro_simulado: primeiro_simulado,
-     
+            primeiro_simulado: primeiro_simulado,    
         }); 
     });
-    
+});
+
+//Rotas para receber os gabaritos doS SIMULADOS DE LÍNGUA MATEMÁTICA
+app.get("/gabarito_simulado_mat", (req, res) => {
+    Primeiro_simulado.findAll({order: [['nome', 'ASC']]}).then(primeiro_simulado => {
+        res.render("gabarito_simulado_mat", {
+            primeiro_simulado: primeiro_simulado,    
+        }); 
+    });
 });
 
 
@@ -2062,6 +2066,21 @@ app.post("/deletar_simulado_lingua_portuguesa", (req, res) => {
             
         }).then(()=>{
             res.redirect("/gabarito_simulado_lp");
+        });
+    }
+});
+
+//rota para apagar um registro da tabela História 3 Bim
+app.post("/deletar_simulado_matematica", (req, res) => {
+    var id = req.body.id;
+    if(id != undefined){
+        Primeiro_simulado.destroy({
+            where: {
+                id: id
+            }
+            
+        }).then(()=>{
+            res.redirect("/gabarito_simulado_mat");
         });
     }
 });
