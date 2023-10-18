@@ -1428,7 +1428,7 @@ app.post("/gabarito_historia3Bim", (req, res) => {
 app.post("/envio_primeiro_simulado", (req, res) => {
     const respostasLinguaPortuguesa = [
         "A", "B", "C",
-        "A", "D", "B",
+        "A", "D", "A",
         "A", "C", "B",
         "B", "D",
         "A", "B", "C",
