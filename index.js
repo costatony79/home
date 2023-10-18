@@ -1866,6 +1866,20 @@ app.get("/gabarito_simulados", (req, res) => {
     
 });
 
+//Rotas para receber os gabaritos doS SIMULADOS
+app.get("/gabarito_simulado_lp", (req, res) => {
+
+
+    Primeiro_simulado.findAll({order: [['nome', 'ASC']]}).then(primeiro_simulado => {
+        res.render("gabarito_simulado_lp", {
+
+            primeiro_simulado: primeiro_simulado,
+     
+        }); 
+    });
+    
+});
+
 
 //****************************************************************************************** */
     //rota para apagar um registro da tabela da 61
@@ -2033,6 +2047,21 @@ app.post("/deletarsimulados", (req, res) => {
             
         }).then(()=>{
             res.redirect("/gabarito_simulados");
+        });
+    }
+});
+
+//rota para apagar um registro da tabela História 3 Bim
+app.post("/deletar_simulado_lingua_portuguesa", (req, res) => {
+    var id = req.body.id;
+    if(id != undefined){
+        Primeiro_simulado.destroy({
+            where: {
+                id: id
+            }
+            
+        }).then(()=>{
+            res.redirect("/gabarito_simulado_lp");
         });
     }
 });
