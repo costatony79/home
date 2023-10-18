@@ -1434,7 +1434,7 @@ app.post("/envio_primeiro_simulado", (req, res) => {
         "A", "B", "C",
         "C", "B", "D",
         "D", "C", "B",
-        "C", "A"];
+        "C", "D"];
     const respostasMatematica = [
         "C", "B", "B",
         "C", "A", "A",
