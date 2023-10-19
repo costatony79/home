@@ -1637,23 +1637,21 @@ app.post("/envio_primeiro_simulado", (req, res) => {
 //Rotas para receber os gabaritos do segundo simulado
 app.post("/envio_segundo_simulado", (req, res) => {
     const respostasLinguaPortuguesa = [
-        "A", "B", "C",
-        "A", "D", "B",
-        "A", "C", "B",
-        "B", "D",
-        "A", "B", "C",
-        "C", "B", "D",
-        "D", "C", "B",
-        "C", "A"];
+        "A", "A", "C",
+        "D", "B", "D",
+        "C", "D", "B",
+        "D", "C", "A", 
+        "B", "C", "B",
+        "B", "C", "D",
+        "A", "C", "C", "D"];
     const respostasMatematica = [
-        "C", "B", "B",
-        "C", "A", "A",
-        "D", "C", "C",
-        "B", "C",
-        "B", "A", "A",
-        "C", "B", "A",
-        "D", "C", "C",
-        "C", "C"];
+        "D", "A", "A",
+        "D", "D", "B",
+        "B", "C", "B",
+        "B", "B", "C", 
+        "D", "C", "D",
+        "C", "C", "D", 
+        "C", "B", "C", "D"];
     var nota_matematica = 0;
     var nota_lingua_portuguesa = 0;
     var nome = req.body.name;
@@ -1868,18 +1866,33 @@ app.get("/gabarito_simulados", (req, res) => {
 
 //Rotas para receber os gabaritos doS SIMULADOS DE LÍNGUA PORTUGUESA
 app.get("/gabarito_simulado_lp", (req, res) => {
+    var seg_simulado;
+
+    Segundo_simulado.findAll({order: [['nome', 'ASC']]}).then(segundo_simulado => {
+        seg_simulado = segundo_simulado;
+    });
+
+
     Primeiro_simulado.findAll({order: [['nome', 'ASC']]}).then(primeiro_simulado => {
         res.render("gabarito_simulado_lp", {
-            primeiro_simulado: primeiro_simulado,    
+            primeiro_simulado: primeiro_simulado,  
+            segundo_simulado: seg_simulado  
         }); 
     });
 });
 
 //Rotas para receber os gabaritos doS SIMULADOS DE LÍNGUA MATEMÁTICA
 app.get("/gabarito_simulado_mat", (req, res) => {
+    var seg_simulado;
+
+    Segundo_simulado.findAll({order: [['nome', 'ASC']]}).then(segundo_simulado => {
+        seg_simulado = segundo_simulado;
+    });
+
     Primeiro_simulado.findAll({order: [['nome', 'ASC']]}).then(primeiro_simulado => {
         res.render("gabarito_simulado_mat", {
-            primeiro_simulado: primeiro_simulado,    
+            primeiro_simulado: primeiro_simulado,
+            segundo_simulado: seg_simulado    
         }); 
     });
 });

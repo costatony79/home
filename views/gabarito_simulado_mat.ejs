@@ -112,6 +112,99 @@
         <hr>
         <hr>
         <br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3 class="display-6 text-center">SEGUNDO SIMULADO MATEMÁTICA</h3>            
+                </div>
+                <div class="row">
+                <div class="col">
+                    <button class="btn btn-warning" id="esconder_segundo_simulado_matematica">Esconder</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-success" id="mostrar_segundo_simulado_matematica">Mostrar</button> 
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="container-fluid" id="gab_segundo_simulado_matematica">
+            <table class="table table-dark">
+                <tr>
+                    <th>NOME</th>           
+                    <th>Q23</th>
+                    <th>Q24</th>
+                    <th>Q25</th>
+                    <th>Q26</th>
+                    <th>Q27</th>
+                    <th>Q28</th>
+                    <th>Q29</th>
+                    <th>Q30</th>
+                    <th>Q31</th>
+                    <th>Q32</th>
+                    <th>Q33</th>
+                    <th>Q34</th>
+                    <th>Q35</th>
+                    <th>Q36</th>
+                    <th>Q37</th>
+                    <th>Q38</th>
+                    <th>Q39</th>
+                    <th>Q40</th>
+                    <th>Q41</th>
+                    <th>Q42</th>
+                    <th>Q43</th>
+                    <th>Q44</th>
+                    <th>acertos</th>
+                    <th>NOTA</th>
+                    <th>AÇÃO</th>
+                </tr>
+                
+                
+                <tbody>         
+                    
+                    <% segundo_simulado.forEach(function(segundo_simulado) { %>
+                        <tr>          
+                            <td><%= segundo_simulado.nome %></td>
+                            <td><%= segundo_simulado.q23 %></td>
+                            <td><%= segundo_simulado.q24 %></td>
+                            <td><%= segundo_simulado.q25 %></td>
+                            <td><%= segundo_simulado.q26 %></td>
+                            <td><%= segundo_simulado.q27 %></td>
+                            <td><%= segundo_simulado.q28 %></td>
+                            <td><%= segundo_simulado.q29 %></td>
+                            <td><%= segundo_simulado.q30 %></td>
+                            <td><%= segundo_simulado.q31 %></td>
+                            <td><%= segundo_simulado.q32 %></td>
+                            <td><%= segundo_simulado.q33 %></td>
+                            <td><%= segundo_simulado.q34 %></td>
+                            <td><%= segundo_simulado.q35 %></td>
+                            <td><%= segundo_simulado.q36 %></td>
+                            <td><%= segundo_simulado.q37 %></td>
+                            <td><%= segundo_simulado.q38 %></td>
+                            <td><%= segundo_simulado.q39 %></td>
+                            <td><%= segundo_simulado.q40 %></td>
+                            <td><%= segundo_simulado.q41 %></td>
+                            <td><%= segundo_simulado.q42 %></td>
+                            <td><%= segundo_simulado.q43 %></td>
+                            <td><%= segundo_simulado.q44 %></td>
+                            <td><%= segundo_simulado.nota_matematica %></td>
+                            <td><%= Math.floor(segundo_simulado.nota_matematica * 100 / 22)/1 %></td>
+                            
+                            
+                            <td class="align-middle">
+                                <form method="POST" action="/deletar_simulado_matematica">
+                                    <input type="hidden" name="id" value="<%=segundo_simulado.id%>">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </td>
+                            
+                        </tr>
+                        <% }); %> 
+                        
+                    </tbody>
+                    
+                </table>
+                
+            </div>
     </body>
 <script>
     var gab_primeiro_simulado_matematica = document.getElementById('gab_primeiro_simulado_matematica');
@@ -126,6 +219,20 @@
 
     btn_mostra_gab_primeiro_simulado_matematica.addEventListener('click', function() {
         gab_primeiro_simulado_matematica.style.display = 'block';
+    });
+
+    var gab_segundo_simulado_matematica = document.getElementById('gab_segundo_simulado_matematica');
+    var btn_esconde_gab_segundo_simulado_matematica = document.getElementById('esconder_segundo_simulado_matematica');
+    var btn_mostra_gab_segundo_simulado_matematica = document.getElementById('mostrar_segundo_simulado_matematica');
+
+   
+     
+    btn_esconde_gab_segundo_simulado_matematica.addEventListener('click', function() {
+        gab_segundo_simulado_matematica.style.display = 'none';
+    });
+
+    btn_mostra_gab_segundo_simulado_matematica.addEventListener('click', function() {
+        gab_segundo_simulado_matematica.style.display = 'block';
     });
 
    
