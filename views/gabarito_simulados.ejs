@@ -11,7 +11,7 @@
 <body>
 <hr>
 <div class="container">
-    <div class="h1 text-center bg-primary text-light">GABARITO SIMULADOS</div>
+    <div class="h1 text-center bg-primary text-light">ACERTOS E NOTAS SIMULADOS</div>
 </div>
 <hr>
 <div class="container">
@@ -138,6 +138,69 @@
 <hr>
 <br>
 
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="display-6 text-center">TERCEIRO SIMULADO</h3>            
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning" id="esconder_terceiro_simulado">Esconder</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-success" id="mostrar_terceiro_simulado">Mostrar</button> 
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container" id="gab_terceiro_simulado">
+        <table class="table table-dark tabela-container">
+            <tr>
+                <th rowspan="2" class="align-middle">NOME</th>           
+                <th colspan="2">LÍNGUA PORTUGUESA</th>
+                <th colspan="2">MATEMÁTICA</th>
+                <th rowspan="2" class="align-middle">AÇÃO</th>
+            </tr>
+
+            <tr>
+                <th>acertos</th>
+                <th>nota</th>
+                <th>acertos</th>
+                <th>nota</th>
+            </tr>
+            
+            
+                <tbody>         
+                
+                    <% terceiro_simulado.forEach(function(terceiro_simulado) { %>
+                         <tr>          
+                            <td><%= terceiro_simulado.nome %></td>
+                            <td><%= terceiro_simulado.nota_lingua_portuguesa %></td>
+                            <td><%= Math.floor(terceiro_simulado.nota_lingua_portuguesa * 100 / 22)/1 %></td>
+                            <td><%= terceiro_simulado.nota_matematica %></td>
+                            <td><%= Math.floor(terceiro_simulado.nota_lingua_portuguesa * 100 / 22)/1 %></td>
+                            
+                            <td class="align-middle">
+                                <form method="POST" action="/deletar_terceiro_simulado">
+                                    <input type="hidden" name="id" value="<%=terceiro_simulado.id%>">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </td>
+                            
+                          </tr>
+                        <% }); %> 
+                    
+            </tbody>
+           
+    </table>
+
+</div>
+
+<br>
+<hr>
+<hr>
+<br>
+
 </body>
 <script>
     var gabaritoprimeiro_simulado = document.getElementById('gab_primeiro_simulado');
@@ -163,7 +226,18 @@
     btn_mostra_gab_segundo_simulado.addEventListener('click', function() {
         gabaritosegundo_simulado.style.display = 'block';
     });
-    
+
+    var gabaritoterceiro_simulado = document.getElementById('gab_terceiro_simulado');
+    var btn_esconde_gab_terceiro_simulado = document.getElementById('esconder_terceiro_simulado');
+    var btn_mostra_gab_terceiro_simulado = document.getElementById('mostrar_terceiro_simulado');
+
+    btn_esconde_gab_terceiro_simulado.addEventListener('click', function() {
+        gabaritoterceiro_simulado.style.display = 'none';
+    });
+
+    btn_mostra_gab_terceiro_simulado.addEventListener('click', function() {
+        gabaritoterceiro_simulado.style.display = 'block';
+    });
     
 
 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Professor Tony Costa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link href="/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container bg-primary">
+            <%- include('partials/nav_principal.ejs') %>
+        </div>
+        <br>
+        
+
+        <div class="container">
+
+            <div class="text-center h4">TODOS OS GABARITOS</div>
+      
+
+        </div>
+
+        <div class="container">           
+            <div class="row">
+                <div class="col-6">
+                   <a class="btn btn-primary btn-block btn-lg" href="/gabarito_simulados">
+                        <h2>SIMULADOS</h2>
+                    </a>   
+                </div>
+                <div class="col-6">
+                    
+                    <a class="btn btn-primary btn-block btn-lg" href="/gabarito_simulado_lp">
+                        <h2>SIMULADOS LP</h2>
+                    </a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    
+                    <a class="btn btn-primary btn-block btn-lg" href="/gabarito_simulado_mat">
+                        <h2>SIMULADOS MAT</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <%- include('partials/footer.ejs') %>
+ 
+
+        </div>
+   
+    </body>
+    <script src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+
+
+</html>
