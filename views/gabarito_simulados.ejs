@@ -178,7 +178,7 @@
                             <td><%= terceiro_simulado.nota_lingua_portuguesa %></td>
                             <td><%= Math.floor(terceiro_simulado.nota_lingua_portuguesa * 100 / 22)/1 %></td>
                             <td><%= terceiro_simulado.nota_matematica %></td>
-                            <td><%= Math.floor(terceiro_simulado.nota_lingua_portuguesa * 100 / 22)/1 %></td>
+                            <td><%= Math.floor(terceiro_simulado.nota_matematica* 100 / 22)/1 %></td>
                             
                             <td class="align-middle">
                                 <form method="POST" action="/deletar_terceiro_simulado">
@@ -195,7 +195,128 @@
     </table>
 
 </div>
+<br>
+<hr>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="display-6 text-center">QUARTO SIMULADO</h3>            
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning" id="esconder_quarto_simulado">Esconder</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-success" id="mostrar_quarto_simulado">Mostrar</button> 
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container" id="gab_quarto_simulado">
+        <table class="table table-dark tabela-container">
+            <tr>
+                <th rowspan="2" class="align-middle">NOME</th>           
+                <th colspan="2">LÍNGUA PORTUGUESA</th>
+                <th colspan="2">MATEMÁTICA</th>
+                <th rowspan="2" class="align-middle">AÇÃO</th>
+            </tr>
 
+            <tr>
+                <th>acertos</th>
+                <th>nota</th>
+                <th>acertos</th>
+                <th>nota</th>
+            </tr>
+            
+            
+                <tbody>         
+                
+                    <% quarto_simulado.forEach(function(quarto_simulado) { %>
+                         <tr>          
+                            <td><%= quarto_simulado.nome %></td>
+                            <td><%= quarto_simulado.nota_lingua_portuguesa %></td>
+                            <td><%= Math.floor(quarto_simulado.nota_lingua_portuguesa * 100 / 22)/1 %></td>
+                            <td><%= quarto_simulado.nota_matematica %></td>
+                            <td><%= Math.floor(quarto_simulado.nota_matematica* 100 / 22)/1 %></td>
+                            
+                            <td class="align-middle">
+                                <form method="POST" action="/deletar_quarto_simulado">
+                                    <input type="hidden" name="id" value="<%=quarto_simulado.id%>">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </td>
+                            
+                          </tr>
+                        <% }); %> 
+                    
+            </tbody>
+           
+    </table>
+
+</div>
+<br>
+<hr>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="display-6 text-center">QUINTO SIMULADO</h3>            
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning" id="esconder_quinto_simulado">Esconder</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-success" id="mostrar_quinto_simulado">Mostrar</button> 
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container" id="gab_quinto_simulado">
+        <table class="table table-dark tabela-container">
+            <tr>
+                <th rowspan="2" class="align-middle">NOME</th>           
+                <th colspan="2">LÍNGUA PORTUGUESA</th>
+                <th colspan="2">MATEMÁTICA</th>
+                <th rowspan="2" class="align-middle">AÇÃO</th>
+            </tr>
+
+            <tr>
+                <th>acertos</th>
+                <th>nota</th>
+                <th>acertos</th>
+                <th>nota</th>
+            </tr>
+            
+            
+                <tbody>         
+                
+                    <% quinto_simulado.forEach(function(quinto_simulado) { %>
+                         <tr>          
+                            <td><%= quinto_simulado.nome %></td>
+                            <td><%= quinto_simulado.nota_lingua_portuguesa %></td>
+                            <td><%= Math.floor(quinto_simulado.nota_lingua_portuguesa * 100 / 22)/1 %></td>
+                            <td><%= quinto_simulado.nota_matematica %></td>
+                            <td><%= Math.floor(quinto_simulado.nota_matematica* 100 / 22)/1 %></td>
+                            
+                            <td class="align-middle">
+                                <form method="POST" action="/deletar_quinto_simulado">
+                                    <input type="hidden" name="id" value="<%=quinto_simulado.id%>">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </td>
+                            
+                          </tr>
+                        <% }); %> 
+                    
+            </tbody>
+           
+    </table>
+
+</div>
 <br>
 <hr>
 <hr>
@@ -238,8 +359,30 @@
     btn_mostra_gab_terceiro_simulado.addEventListener('click', function() {
         gabaritoterceiro_simulado.style.display = 'block';
     });
-    
 
+    var gabaritoquarto_simulado = document.getElementById('gab_quarto_simulado');
+    var btn_esconde_gab_quarto_simulado = document.getElementById('esconder_quarto_simulado');
+    var btn_mostra_gab_quarto_simulado = document.getElementById('mostrar_quarto_simulado');
+
+    btn_esconde_gab_quarto_simulado.addEventListener('click', function() {
+        gabaritoquarto_simulado.style.display = 'none';
+    });
+
+    btn_mostra_gab_quarto_simulado.addEventListener('click', function() {
+        gabaritoquarto_simulado.style.display = 'block';
+    });
+
+    var gabaritoquinto_simulado = document.getElementById('gab_quinto_simulado');
+    var btn_esconde_gab_quinto_simulado = document.getElementById('esconder_quinto_simulado');
+    var btn_mostra_gab_quinto_simulado = document.getElementById('mostrar_quinto_simulado');
+
+    btn_esconde_gab_quinto_simulado.addEventListener('click', function() {
+        gabaritoquinto_simulado.style.display = 'none';
+    });
+
+    btn_mostra_gab_quinto_simulado.addEventListener('click', function() {
+        gabaritoquinto_simulado.style.display = 'block';
+    });
 
 </script>
 

@@ -301,55 +301,256 @@
     </table>
 
 </div>
+<br>
+<hr>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="display-6 text-center">QUARTO SIMULADO LÍNGUA PORTUGUESA</h3>            
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning" id="esconder_quarto_simulado_lingua_portuguesa">Esconder</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-success" id="mostrar_quarto_simulado_lingua_portuguesa">Mostrar</button> 
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container-fluid" id="gab_quarto_simulado_lingua_portuguesa">
+        <table class="table table-dark">
+            <tr>
+                <th>NOME</th>           
+                <th>Q1</th>
+                <th>Q2</th>
+                <th>Q3</th>
+                <th>Q4</th>
+                <th>Q5</th>
+                <th>Q6</th>
+                <th>Q7</th>
+                <th>Q8</th>
+                <th>Q9</th>
+                <th>Q10</th>
+                <th>Q11</th>
+                <th>Q12</th>
+                <th>Q13</th>
+                <th>Q14</th>
+                <th>Q15</th>
+                <th>Q16</th>
+                <th>Q17</th>
+                <th>Q18</th>
+                <th>Q19</th>
+                <th>Q20</th>
+                <th>Q21</th>
+                <th>Q22</th>
+                <th>acertos</th>
+                <th>NOTA</th>
+                <th>AÇÃO</th>
+            </tr>
+
+               
+                <tbody>         
+                
+                    <% quarto_simulado.forEach(function(quarto_simulado) { %>
+                         <tr>          
+                            <td><%= quarto_simulado.nome %></td>
+                            <td><%= quarto_simulado.q1 %></td>
+                            <td><%= quarto_simulado.q2 %></td>
+                            <td><%= quarto_simulado.q3 %></td>
+                            <td><%= quarto_simulado.q4 %></td>
+                            <td><%= quarto_simulado.q5 %></td>
+                            <td><%= quarto_simulado.q6 %></td>
+                            <td><%= quarto_simulado.q7 %></td>
+                            <td><%= quarto_simulado.q8 %></td>
+                            <td><%= quarto_simulado.q9 %></td>
+                            <td><%= quarto_simulado.q10 %></td>
+                            <td><%= quarto_simulado.q11 %></td>
+                            <td><%= quarto_simulado.q12 %></td>
+                            <td><%= quarto_simulado.q13 %></td>
+                            <td><%= quarto_simulado.q14 %></td>
+                            <td><%= quarto_simulado.q15 %></td>
+                            <td><%= quarto_simulado.q16 %></td>
+                            <td><%= quarto_simulado.q17 %></td>
+                            <td><%= quarto_simulado.q18 %></td>
+                            <td><%= quarto_simulado.q19 %></td>
+                            <td><%= quarto_simulado.q20 %></td>
+                            <td><%= quarto_simulado.q21 %></td>
+                            <td><%= quarto_simulado.q22 %></td>
+                            <td><%= quarto_simulado.nota_lingua_portuguesa %></td>
+                            <td><%= Math.floor(quarto_simulado.nota_lingua_portuguesa * 100 / 22)/1 %></td>
+                            
+                            
+                            <td class="align-middle">
+                                <form method="POST" action="/deletar_simulado_lingua_portuguesa">
+                                    <input type="hidden" name="id" value="<%=quarto_simulado.id%>">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </td>
+                            
+                          </tr>
+                        <% }); %> 
+                    
+            </tbody>
+           
+    </table>
+
+</div>
+<br>
+<hr>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="display-6 text-center">QUINTO SIMULADO LÍNGUA PORTUGUESA</h3>            
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning" id="esconder_quinto_simulado_lingua_portuguesa">Esconder</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-success" id="mostrar_quinto_simulado_lingua_portuguesa">Mostrar</button> 
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="container-fluid" id="gab_quinto_simulado_lingua_portuguesa">
+        <table class="table table-dark">
+            <tr>
+                <th>NOME</th>           
+                <th>Q1</th>
+                <th>Q2</th>
+                <th>Q3</th>
+                <th>Q4</th>
+                <th>Q5</th>
+                <th>Q6</th>
+                <th>Q7</th>
+                <th>Q8</th>
+                <th>Q9</th>
+                <th>Q10</th>
+                <th>Q11</th>
+                <th>Q12</th>
+                <th>Q13</th>
+                <th>Q14</th>
+                <th>Q15</th>
+                <th>Q16</th>
+                <th>Q17</th>
+                <th>Q18</th>
+                <th>Q19</th>
+                <th>Q20</th>
+                <th>Q21</th>
+                <th>Q22</th>
+                <th>acertos</th>
+                <th>NOTA</th>
+                <th>AÇÃO</th>
+            </tr>
+
+               
+                <tbody>         
+                
+                    <% quinto_simulado.forEach(function(quinto_simulado) { %>
+                         <tr>          
+                            <td><%= quinto_simulado.nome %></td>
+                            <td><%= quinto_simulado.q1 %></td>
+                            <td><%= quinto_simulado.q2 %></td>
+                            <td><%= quinto_simulado.q3 %></td>
+                            <td><%= quinto_simulado.q4 %></td>
+                            <td><%= quinto_simulado.q5 %></td>
+                            <td><%= quinto_simulado.q6 %></td>
+                            <td><%= quinto_simulado.q7 %></td>
+                            <td><%= quinto_simulado.q8 %></td>
+                            <td><%= quinto_simulado.q9 %></td>
+                            <td><%= quinto_simulado.q10 %></td>
+                            <td><%= quinto_simulado.q11 %></td>
+                            <td><%= quinto_simulado.q12 %></td>
+                            <td><%= quinto_simulado.q13 %></td>
+                            <td><%= quinto_simulado.q14 %></td>
+                            <td><%= quinto_simulado.q15 %></td>
+                            <td><%= quinto_simulado.q16 %></td>
+                            <td><%= quinto_simulado.q17 %></td>
+                            <td><%= quinto_simulado.q18 %></td>
+                            <td><%= quinto_simulado.q19 %></td>
+                            <td><%= quinto_simulado.q20 %></td>
+                            <td><%= quinto_simulado.q21 %></td>
+                            <td><%= quinto_simulado.q22 %></td>
+                            <td><%= quinto_simulado.nota_lingua_portuguesa %></td>
+                            <td><%= Math.floor(quinto_simulado.nota_lingua_portuguesa * 100 / 22)/1 %></td>
+                            
+                            
+                            <td class="align-middle">
+                                <form method="POST" action="/deletar_simulado_lingua_portuguesa">
+                                    <input type="hidden" name="id" value="<%=quinto_simulado.id%>">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </td>
+                            
+                          </tr>
+                        <% }); %> 
+                    
+            </tbody>
+           
+    </table>
+
+</div>
+
 
 
 </body>
 <script>
     var gab_primeiro_simulado_lingua_portuguesa = document.getElementById('gab_primeiro_simulado_lingua_portuguesa');
     var btn_esconde_gab_primeiro_simulado_lingua_portuguesa = document.getElementById('esconder_primeiro_simulado_lingua_portuguesa');
-    var btn_mostra_gab_primeiro_simulado_lingua_portuguesa = document.getElementById('mostrar_primeiro_simulado_lingua_portuguesa');
-
-   
-     
+    var btn_mostra_gab_primeiro_simulado_lingua_portuguesa = document.getElementById('mostrar_primeiro_simulado_lingua_portuguesa');  
     btn_esconde_gab_primeiro_simulado_lingua_portuguesa.addEventListener('click', function() {
         gab_primeiro_simulado_lingua_portuguesa.style.display = 'none';
     });
-
     btn_mostra_gab_primeiro_simulado_lingua_portuguesa.addEventListener('click', function() {
         gab_primeiro_simulado_lingua_portuguesa.style.display = 'block';
     });
 
     var gab_segundo_simulado_lingua_portuguesa = document.getElementById('gab_segundo_simulado_lingua_portuguesa');
     var btn_esconde_gab_segundo_simulado_lingua_portuguesa = document.getElementById('esconder_segundo_simulado_lingua_portuguesa');
-    var btn_mostra_gab_segundo_simulado_lingua_portuguesa = document.getElementById('mostrar_segundo_simulado_lingua_portuguesa');
-
-   
-     
+    var btn_mostra_gab_segundo_simulado_lingua_portuguesa = document.getElementById('mostrar_segundo_simulado_lingua_portuguesa'); 
     btn_esconde_gab_segundo_simulado_lingua_portuguesa.addEventListener('click', function() {
         gab_segundo_simulado_lingua_portuguesa.style.display = 'none';
     });
-
     btn_mostra_gab_segundo_simulado_lingua_portuguesa.addEventListener('click', function() {
         gab_segundo_simulado_lingua_portuguesa.style.display = 'block';
     });
 
     var gab_terceiro_simulado_lingua_portuguesa = document.getElementById('gab_terceiro_simulado_lingua_portuguesa');
     var btn_esconde_gab_terceiro_simulado_lingua_portuguesa = document.getElementById('esconder_terceiro_simulado_lingua_portuguesa');
-    var btn_mostra_gab_terceiro_simulado_lingua_portuguesa = document.getElementById('mostrar_terceiro_simulado_lingua_portuguesa');
-
-   
-     
+    var btn_mostra_gab_terceiro_simulado_lingua_portuguesa = document.getElementById('mostrar_terceiro_simulado_lingua_portuguesa');    
     btn_esconde_gab_terceiro_simulado_lingua_portuguesa.addEventListener('click', function() {
         gab_terceiro_simulado_lingua_portuguesa.style.display = 'none';
     });
-
     btn_mostra_gab_terceiro_simulado_lingua_portuguesa.addEventListener('click', function() {
         gab_terceiro_simulado_lingua_portuguesa.style.display = 'block';
     });
 
+    var gab_quarto_simulado_lingua_portuguesa = document.getElementById('gab_quarto_simulado_lingua_portuguesa');
+    var btn_esconde_gab_quarto_simulado_lingua_portuguesa = document.getElementById('esconder_quarto_simulado_lingua_portuguesa');
+    var btn_mostra_gab_quarto_simulado_lingua_portuguesa = document.getElementById('mostrar_quarto_simulado_lingua_portuguesa');    
+    btn_esconde_gab_quarto_simulado_lingua_portuguesa.addEventListener('click', function() {
+        gab_quarto_simulado_lingua_portuguesa.style.display = 'none';
+    });
+    btn_mostra_gab_quarto_simulado_lingua_portuguesa.addEventListener('click', function() {
+        gab_quarto_simulado_lingua_portuguesa.style.display = 'block';
+    });
+
+    var gab_quinto_simulado_lingua_portuguesa = document.getElementById('gab_quinto_simulado_lingua_portuguesa');
+    var btn_esconde_gab_quinto_simulado_lingua_portuguesa = document.getElementById('esconder_quinto_simulado_lingua_portuguesa');
+    var btn_mostra_gab_quinto_simulado_lingua_portuguesa = document.getElementById('mostrar_quinto_simulado_lingua_portuguesa');    
+    btn_esconde_gab_quinto_simulado_lingua_portuguesa.addEventListener('click', function() {
+        gab_quinto_simulado_lingua_portuguesa.style.display = 'none';
+    });
+    btn_mostra_gab_quinto_simulado_lingua_portuguesa.addEventListener('click', function() {
+        gab_quinto_simulado_lingua_portuguesa.style.display = 'block';
+    });
+
    
-
-
 </script>
 
 
