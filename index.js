@@ -2545,7 +2545,7 @@ app.get("/gabarito_simulado_lp", (req, res) => {
     });
 
     Primeiro_simulado.findAll({order: [['nome', 'ASC']]}).then(primeiro_simulado => {
-        res.render("gabarito_simulados", {
+        res.render("gabarito_simulado_lp", {
 
             primeiro_simulado: primeiro_simulado,
             segundo_simulado: seg_simulado,
@@ -2578,7 +2578,7 @@ app.get("/gabarito_simulado_mat", (req, res) => {
     });
 
     Primeiro_simulado.findAll({order: [['nome', 'ASC']]}).then(primeiro_simulado => {
-        res.render("gabarito_simulados", {
+        res.render("gabarito_simulado_mat", {
 
             primeiro_simulado: primeiro_simulado,
             segundo_simulado: seg_simulado,
