@@ -2076,21 +2076,21 @@ app.post("/envio_terceiro_simulado", (req, res) => {
 //Rotas para receber os gabaritos do terceiro simulado
 app.post("/envio_quarto_simulado", (req, res) => {
     const respostasLinguaPortuguesa = [
-        "A", "B", "B",
-        "D", "B", "D",
-        "C", "B", "A",
-        "A", "A", "B", 
-        "D", "A", "C",
-        "A", "D", "A",
-        "C", "C", "D", "A"];
+        "B", "A", "B",
+        "D", "D", "A",
+        "C", "A", "A",
+        "A", "C", "D", 
+        "A", "D", "B",
+        "B", "B", "D",
+        "B", "C", "C", "B"];
     const respostasMatematica = [
-        "D", "A", "A",
-        "C", "D", "B",
-        "A", "C", "C",
-        "B", "B", "D", 
-        "A", "D", "D",
-        "A", "C", "A", 
-        "D", "D", "A", "A"];
+        "A", "C", "A",
+        "C", "C", "C",
+        "C", "C", "B",
+        "B", "D", "D", 
+        "D", "D", "A",
+        "A", "C", "C", 
+        "A", "B", "B", "B"];
     var nota_matematica = 0;
     var nota_lingua_portuguesa = 0;
     var nome = req.body.name;
@@ -2151,13 +2151,13 @@ app.post("/envio_quarto_simulado", (req, res) => {
     ];
 
     for (let i = 0; i < respostasEnviadasLinguaPortuguesa.length; i++) {
-        if (respostasEnviadasLinguaPortuguesa[i].toUpperCase() === respostasLinguaPortuguesa[i]) {
+        if (respostasEnviadasLinguaPortuguesa[i] === respostasLinguaPortuguesa[i]) {
             nota_lingua_portuguesa++;
         }
     };
 
     for (let i = 0; i < respostasEnviadasMatematica.length; i++) {
-        if (respostasEnviadasMatematica[i].toUpperCase() === respostasMatematica[i]) {
+        if (respostasEnviadasMatematica[i] === respostasMatematica[i]) {
             nota_matematica++;
         }
     };
