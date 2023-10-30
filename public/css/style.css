@@ -123,4 +123,9 @@ th {
 .operacao{
     font-size: 5em;
 }
-
+.centralizado {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    height: 200px;           /* Defina a altura desejada para a célula da tabela */
+}
