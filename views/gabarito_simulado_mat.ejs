@@ -404,6 +404,103 @@
                     <hr>
                     <hr>
                     <br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="display-6 text-center">QUINTO SIMULADO MATEMÁTICA</h3>            
+                            </div>
+                            <div class="row">
+                            <div class="col">
+                                <button class="btn btn-warning" id="esconder_quinto_simulado_matematica">Esconder</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-success" id="mostrar_quinto_simulado_matematica">Mostrar</button> 
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                <div class="container-fluid" id="gab_quinto_simulado_matematica">
+                        <table class="table table-dark">
+                            <tr>
+                                <th>NOME</th>           
+                                <th>Q23</th>
+                                <th>Q24</th>
+                                <th>Q25</th>
+                                <th>Q26</th>
+                                <th>Q27</th>
+                                <th>Q28</th>
+                                <th>Q29</th>
+                                <th>Q30</th>
+                                <th>Q31</th>
+                                <th>Q32</th>
+                                <th>Q33</th>
+                                <th>Q34</th>
+                                <th>Q35</th>
+                                <th>Q36</th>
+                                <th>Q37</th>
+                                <th>Q38</th>
+                                <th>Q39</th>
+                                <th>Q40</th>
+                                <th>Q41</th>
+                                <th>Q42</th>
+                                <th>Q43</th>
+                                <th>Q44</th>
+                                <th>acertos</th>
+                                <th>NOTA</th>
+                                <th>AÇÃO</th>
+                            </tr>
+                            
+                            
+                            <tbody>         
+                                
+                                <% quinto_simulado.forEach(function(quinto_simulado) { %>
+                                    <tr>          
+                                        <td><%= quinto_simulado.nome %></td>
+                                        <td><%= quinto_simulado.q23 %></td>
+                                        <td><%= quinto_simulado.q24 %></td>
+                                        <td><%= quinto_simulado.q25 %></td>
+                                        <td><%= quinto_simulado.q26 %></td>
+                                        <td><%= quinto_simulado.q27 %></td>
+                                        <td><%= quinto_simulado.q28 %></td>
+                                        <td><%= quinto_simulado.q29 %></td>
+                                        <td><%= quinto_simulado.q30 %></td>
+                                        <td><%= quinto_simulado.q31 %></td>
+                                        <td><%= quinto_simulado.q32 %></td>
+                                        <td><%= quinto_simulado.q33 %></td>
+                                        <td><%= quinto_simulado.q34 %></td>
+                                        <td><%= quinto_simulado.q35 %></td>
+                                        <td><%= quinto_simulado.q36 %></td>
+                                        <td><%= quinto_simulado.q37 %></td>
+                                        <td><%= quinto_simulado.q38 %></td>
+                                        <td><%= quinto_simulado.q39 %></td>
+                                        <td><%= quinto_simulado.q40 %></td>
+                                        <td><%= quinto_simulado.q41 %></td>
+                                        <td><%= quinto_simulado.q42 %></td>
+                                        <td><%= quinto_simulado.q43 %></td>
+                                        <td><%= quinto_simulado.q44 %></td>
+                                        <td><%= quinto_simulado.nota_matematica %></td>
+                                        <td><%= Math.floor(quinto_simulado.nota_matematica * 100 / 22)/1 %></td>
+                                        
+                                        
+                                        <td class="align-middle">
+                                            <form method="POST" action="/deletar_simulado_matematica">
+                                                <input type="hidden" name="id" value="<%=quinto_simulado.id%>">
+                                                <button class="btn btn-danger">Deletar</button>
+                                            </form>
+                                        </td>
+                                        
+                                    </tr>
+                                    <% }); %> 
+                                    
+                                </tbody>
+                                
+                            </table>
+                            
+                        </div>
+                        <br>
+                        <hr>
+                        <hr>
+                        <br>
     </body>
 <script>
     var gab_primeiro_simulado_matematica = document.getElementById('gab_primeiro_simulado_matematica');
