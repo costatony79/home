@@ -122,6 +122,7 @@ th {
 }
 .operacao{
     font-size: 5em;
+    text-align: center;
 }
 .centralizado {
     display: flex;

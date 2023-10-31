@@ -2295,21 +2295,21 @@ app.post("/envio_quarto_simulado", (req, res) => {
 //Rotas para receber os gabaritos do terceiro simulado
 app.post("/envio_quinto_simulado", (req, res) => {
     const respostasLinguaPortuguesa = [
-        "A", "B", "B",
-        "D", "B", "D",
-        "C", "B", "A",
-        "A", "A", "B", 
-        "D", "A", "C",
+        "C", "B", "D",
+        "C", "C", "B",
+        "C", "A", "A",
+        "B", "A", "B", 
         "A", "D", "A",
-        "C", "C", "D", "A"];
+        "A", "B", "B",
+        "A", "B", "A", "A"];
     const respostasMatematica = [
-        "D", "A", "A",
-        "C", "D", "B",
-        "A", "C", "C",
-        "B", "B", "D", 
-        "A", "D", "D",
-        "A", "C", "A", 
-        "D", "D", "A", "A"];
+        "B", "C", "B",
+        "B", "A", "A",
+        "C", "B", "D",
+        "C", "C", "A", 
+        "A", "B", "D",
+        "B", "C", "D", 
+        "D", "B", "B", "A"];
     var nota_matematica = 0;
     var nota_lingua_portuguesa = 0;
     var nome = req.body.name;
