@@ -67,3 +67,37 @@ function validarFormulario() {
   return true;
 }
 
+window.onload = function() {
+  const divisoes = document.getElementById('divisoes');
+
+  for (let i = 0; i < 20; i++) {
+      // Gera números aleatórios para a divisão
+      const divisor = Math.floor(Math.random() * 9) + 1;
+      const resultado = Math.floor(Math.random() * 9) + 1;
+      const dividendo = divisor * resultado;
+
+      // Cria o elemento da conta
+      const conta = document.createElement('p');
+      conta.textContent = `${dividendo} ÷ ${divisor} = `;
+
+      // Cria o campo de entrada
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.setAttribute('data-resposta', resultado.toString());
+
+      // Adiciona evento para verificar a resposta
+      input.addEventListener('input', function() {
+          if (this.value === this.getAttribute('data-resposta')) {
+              this.className = 'correto';
+          } else {
+              this.className = 'incorreto';
+          }
+      });
+
+      // Adiciona a conta e o campo de entrada no documento
+      divisoes.appendChild(conta);
+      conta.appendChild(input);
+  }
+};
+
+

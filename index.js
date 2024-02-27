@@ -269,6 +269,17 @@ app.get("/cicatriz", (req, res) => {
     app.get("/quinto_simulado", (req, res) => {
         res.render("quinto_simulado");
      });
+
+            //Rotas para as páginas DAS ATIVIDADES DIÁRIAS
+    app.get("/atividades_diarias", (req, res) => {
+        res.render("atividades_diarias");
+     });
+
+     
+            //Rotas para as páginas DAS ATIVIDADES DIÁRIAS
+    app.get("/divisao", (req, res) => {
+        res.render("divisao");
+     });
 //************************************************************* */
   //Rotas para receber os gabaritos das turmas 61
   app.post("/gabarito_61_bim_3", (req, res) => {

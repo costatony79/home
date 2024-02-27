@@ -130,3 +130,17 @@ th {
     align-items: center;     /* Centraliza verticalmente */
     height: 200px;           /* Defina a altura desejada para a célula da tabela */
 }
+input {
+    margin: 5px;
+    padding: 5px;
+}
+
+input.correto {
+    background-color: green;
+    color: white;
+}
+
+input.incorreto {
+    background-color: red;
+    color: white;
+}
