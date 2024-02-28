@@ -121,18 +121,12 @@ th {
     z-index: -1;
 }
 .operacao{
-    font-size: 5em;
+    font-size:2.5em;
     text-align: center;
 }
-.centralizado {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
-    height: 200px;           /* Defina a altura desejada para a célula da tabela */
-}
+
 input {
-    margin: 5px;
-    padding: 5px;
+   font-size:1.5em;
 }
 
 input.correto {

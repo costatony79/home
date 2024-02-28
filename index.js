@@ -161,6 +161,15 @@ app.get("/cicatriz", (req, res) => {
     res.render("cicatriz");
  });
 
+   //rota para a página DO LIVRO O MAPA DA FAZENDA
+app.get("/o_mapa", (req, res) => {
+    res.render("o-mapa");
+ });
+
+   //rota para a página DO LIVRO JAMES, O CAPITÃO GANCHO
+app.get("/james_o_capitao", (req, res) => {
+    res.render("james_o_capitao");
+ });
  //Rotas para as páginas das turmas América Sarmento 61
  app.get("/61", (req, res) => {
     res.render("61");
