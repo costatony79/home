@@ -170,6 +170,27 @@ app.get("/o_mapa", (req, res) => {
 app.get("/james_o_capitao", (req, res) => {
     res.render("james_o_capitao");
  });
+
+    //rota para a página DO LIVRO DA CAVERNA A INFORMATICA
+app.get("/da-caverna", (req, res) => {
+    res.render("da-caverna");
+ });
+
+     //rota para a página DO LIVRO UMA PEDRADA CERTEIRA
+app.get("/umapedrada", (req, res) => {
+    res.render("umapedrada");
+ });
+
+      //rota para a página DO LIVRO água limpa, água suja
+app.get("/agualimpa", (req, res) => {
+    res.render("agualimpa");
+ });
+
+     //rota para a página DO LIVRO água limpa, água suja
+app.get("/vaievem", (req, res) => {
+    res.render("vaievem");
+ });
+
  //Rotas para as páginas das turmas América Sarmento 61
  app.get("/61", (req, res) => {
     res.render("61");
