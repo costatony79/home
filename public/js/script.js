@@ -100,4 +100,36 @@ window.onload = function() {
   }
 };
 
+function startTimer2(duration, display) {
+  var timer2 = duration, minutes, seconds;
+  const camposTexto = document.querySelectorAll('input[type="text"]');
+  var countdownInterval = setInterval(function () {
+    minutes = parseInt(timer2 / 60, 10);
+    seconds = parseInt(timer2 % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = minutes + ":" + seconds;
+
+    if (--timer2 < 0) {
+      clearInterval(countdownInterval);
+      display.textContent = "0";
+      alert("Tempo esgotado!"),
+        camposTexto.forEach(function(campo) {
+          campo.disabled = true;
+      });
+    }
+  }, 1000);
+}
+
+// Função para iniciar o temporizador
+function iniciarTemporizador() {
+  var oneMinute = 180; // 3 minuto em segundos
+  var display = document.getElementById('timer2'); // Elemento HTML onde o tempo será exibido
+
+  display.textContent = "03:00"; // Reinicia o temporizador
+
+  startTimer(oneMinute, display);
+}
 
