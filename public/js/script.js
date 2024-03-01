@@ -125,7 +125,7 @@ function startTimer2(duration, display) {
 
 // Função para iniciar o temporizador
 function iniciarTemporizador2() {
-  var oneMinute = 5; // 3 minuto em segundos
+  var oneMinute = 110; // 3 minuto em segundos
   var display = document.getElementById('timer2'); // Elemento HTML onde o tempo será exibido
 
   display.textContent = "??:??"; // Reinicia o temporizador
