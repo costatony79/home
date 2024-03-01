@@ -70,7 +70,7 @@ function validarFormulario() {
 window.onload = function() {
   const divisoes = document.getElementById('divisoes');
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 30; i++) {
       // Gera números aleatórios para a divisão
       const divisor = Math.floor(Math.random() * 9) + 1;
       const resultado = Math.floor(Math.random() * 9) + 1;
@@ -120,16 +120,16 @@ function startTimer2(duration, display) {
           campo.disabled = true;
       });
     }
-  }, 1000);
+  },1000 );
 }
 
 // Função para iniciar o temporizador
-function iniciarTemporizador() {
-  var oneMinute = 180; // 3 minuto em segundos
+function iniciarTemporizador2() {
+  var oneMinute = 5; // 3 minuto em segundos
   var display = document.getElementById('timer2'); // Elemento HTML onde o tempo será exibido
 
-  display.textContent = "03:00"; // Reinicia o temporizador
+  display.textContent = "??:??"; // Reinicia o temporizador
 
-  startTimer(oneMinute, display);
+  startTimer2(oneMinute, display);
 }
 
