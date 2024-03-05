@@ -133,3 +133,48 @@ function iniciarTemporizador2() {
   startTimer2(oneMinute, display);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  const tabela = document.getElementById('tabelaMultiplicacao');
+  const contagemDiv = document.getElementById('contagem');
+  let pontuacao = 0;
+
+  for (let i = 1; i <= 10; i++) {
+      const linha = tabela.insertRow();
+      const celulaCabecalho = linha.insertCell();
+      celulaCabecalho.textContent = `x${i}`;
+
+      for (let j = 1; j <= 10; j++) {
+          const celula = linha.insertCell();
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.dataset.respostaCorreta = i * j;
+
+          input.oninput = function() {
+              // Remove as classes para evitar duplicação de pontuação
+              if (this.dataset.foiRespondido === 'true') {
+                  if (this.value == this.dataset.respostaCorreta) {
+                      if (this.className !== 'correto') {
+                          pontuacao++; // Correto agora, mas estava incorreto antes
+                      }
+                  } else {
+                      if (this.className === 'correto') {
+                          pontuacao--; // Incorreto agora, mas estava correto antes
+                      }
+                  }
+              } else {
+                  if (this.value == this.dataset.respostaCorreta) {
+                      pontuacao++;
+                  } else {
+                      pontuacao--;
+                  }
+                  this.dataset.foiRespondido = 'true';
+              }
+
+              this.className = (this.value == this.dataset.respostaCorreta) ? 'correto' : 'incorreto';
+              contagemDiv.textContent = `Pontuação: ${pontuacao}`;
+          };
+
+          celula.appendChild(input);
+      }
+  }
+});

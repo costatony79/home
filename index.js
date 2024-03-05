@@ -310,6 +310,11 @@ app.get("/vaievem", (req, res) => {
     app.get("/divisao", (req, res) => {
         res.render("divisao");
      });
+
+                 //Rotas para as páginas DAS ATIVIDADES DIÁRIAS
+    app.get("/multiplicacao", (req, res) => {
+        res.render("multiplicacao");
+     });
 //************************************************************* */
   //Rotas para receber os gabaritos das turmas 61
   app.post("/gabarito_61_bim_3", (req, res) => {
