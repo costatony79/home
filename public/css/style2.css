@@ -5,7 +5,7 @@ table {
 }
 
 th, td {
-    border: 2px solid black;
+    border: 1px solid black;
     width: 5vw;
     height: 10vh;
     text-align: center;
@@ -29,4 +29,10 @@ input.correto {
 input.incorreto {
     background-color: red;
     color: white;
+}
+.fixado{
+    position: sticky;
+    top: 0;
+    background-color: #fff; /* Cor de fundo para cobrir o texto abaixo quando rolar */
+    z-index: 1;
 }
