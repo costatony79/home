@@ -325,6 +325,14 @@ app.get("/vaievem", (req, res) => {
     app.get("/multiplicacao_dois", (req, res) => {
         res.render("multiplicacaopordois");
      });
+
+     app.get("/a_expansao", (req, res) => {
+        res.render("a_expansao");
+     });
+
+     app.get("/os_seres_humanos", (req, res) => {
+        res.render("os_seres_humanos");
+     });
 //************************************************************* */
   //Rotas para receber os gabaritos das turmas 61
   app.post("/gabarito_61_bim_3", (req, res) => {
