@@ -111,8 +111,17 @@ app.get("/teste-leitura-julho", (req, res) => {
     res.render("teste-leitura-julho");
  });
 
- //rota para a página do teste de leitura 07 setembro
-app.get("/teste-leitura-setembro", (req, res) => {
+ //rota para a página do teste de leitura
+app.get("/teste-leitura-marco", (req, res) => {
+    res.render("teste-leitura-marco");
+ });
+
+  //rota para a página do teste de leitura
+app.get("/teste-leitura-abril", (req, res) => {
+    res.render("teste-leitura-abril");
+ });
+
+ app.get("/teste-leitura-setembro", (req, res) => {
     res.render("teste-leitura-setembro");
  });
 
