@@ -178,3 +178,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
 });
+
+function checkAnswers() {
+  const inputs = document.querySelectorAll('input[type="text"]');
+  inputs.forEach(input => {
+      const answer = input.dataset.answer.toLowerCase();
+      const userAnswer = input.value.trim().toLowerCase();
+      if (userAnswer === answer) {
+          input.classList.remove('incorrect');
+          input.classList.add('correct');
+      } else {
+          input.classList.remove('correct');
+          input.classList.add('incorrect');
+      }
+  });
+}

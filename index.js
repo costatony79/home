@@ -21,30 +21,6 @@ app.use(bodyParser.json());
 const connection = require("./database/database");
 const connection_simulados = require("./database/database_simulados");
 
-//model do BD para receber as respostas do gabaritos da turma 61
-const Turma61_bim_3 = require("./database/Turma61_bim_3");
-
-//model do BD para receber as respostas do gabaritos da turma 62
-const Turma62_bim_3 = require("./database/Turma62_bim_3");
-
-//model do BD para receber as respostas do gabaritos da turma 63
-const Turma63_bim_3 = require("./database/Turma63_bim_3");
-
-//model do BD para receber as respostas do gabaritos da turma 64
-const Turma64_bim_3 = require("./database/Turma64_bim_3");
-
-//model do BD para receber as respostas do gabaritos da turma 101
-const Turma101_bim_3 = require("./database/Turma101_bim_3");
-
-//model do BD para receber as respostas do gabaritos da turma 101
-const Turma102_bim_3 = require("./database/Turma102_bim_3");
-
-//model do BD para receber as respostas do gabaritos da turma 303
-const Turma303_bim_3 = require("./database/Turma303_bim_3");
-
-//model do BD para receber as respostas do gabaritos da turma 303
-const Turma304_bim_3 = require("./database/Turma304_bim_3");
-
 //model do DB do trabaho do terceiro bimestre de geografia
 const Geografia3bim = require("./database/Geografia3Bim");
 
@@ -119,6 +95,11 @@ app.get("/teste-leitura-marco", (req, res) => {
   //rota para a página do teste de leitura
 app.get("/teste-leitura-abril", (req, res) => {
     res.render("teste-leitura-abril");
+ });
+
+   //rota para a página do teste de leitura
+app.get("/brasil_divisao", (req, res) => {
+    res.render("divisao_brasil");
  });
 
  app.get("/teste-leitura-setembro", (req, res) => {
