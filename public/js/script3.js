@@ -1,145 +1,45 @@
-const respostasCorretas   = [
-    "ACRE",
-    "RIO BRANCO",
-    "AC",
-    "NORTE",
-    "ALAGOAS",
-    "MACEIÓ",
-    "AL",
-    "NORDESTE",
-    "AMAPÁ",
-    "MACAPÁ",
-    "AP",
-    "NORTE",
-    "AMAZONAS",
-    "MANAUS",
-    "AM",
-    "NORTE",
-    "BAHIA",
-    "SALVADOR",
-    "BA",
-    "NORDESTE",
-    "CEARÁ",
-    "FORTALEZA",
-    "CE",
-    "NORDESTE",
-    "DISTRITO FEDERAL",
-    "BRASÍLIA",
-    "DF",
-    "CENTRO-OESTE",
-    "ESPÍRITO SANTO",
-    "VITÓRIA",
-    "ES",
-    "SUDESTE",
-    "GOIÁS",
-    "GOIÂNIA",
-    "GO",
-    "CENTRO-OESTE",
-    "MARANHÃO",
-    "SÃO LUÍS",
-    "MA",
-    "NORDESTE",
-    "MATO GROSSO",
-    "CUIABÁ",
-    "MT",
-    "CENTRO-OESTE",
-    "MATO GROSSO DO SUL",
-    "CAMPO GRANDE",
-    "MS",
-    "CENTRO-OESTE",
-    "MINAS GERAIS",
-    "BELO HORIZONTE",
-    "MG",
-    "SUDESTE",
-    "PARÁ",
-    "BELÉM",
-    "PA",
-    "NORTE",
-    "PARAÍBA",
-    "JOÃO PESSOA",
-    "PB",
-    "NORDESTE",
-    "PARANÁ",
-    "CURITIBA",
-    "PR",
-    "SUL",
-    "PERNAMBUCO",
-    "RECIFE",
-    "PE",
-    "NORDESTE",
-    "PIAUÍ",
-    "TERESINA",
-    "PI",
-    "NORDESTE",
-    "RIO DE JANEIRO",
-    "RIO DE JANEIRO",
-    "RJ",
-    "SUDESTE",
-    "RIO GRANDE DO NORTE",
-    "NATAL",
-    "RN",
-    "NORDESTE",
-    "RIO GRANDE DO SUL",
-    "PORTO ALEGRE",
-    "RS",
-    "SUL",
-    "RONDÔNIA",
-    "PORTO VELHO",
-    "RO",
-    "NORTE",
-    "RORAIMA",
-    "BOA VISTA",
-    "RR",
-    "NORTE",
-    "SANTA CATARINA",
-    "FLORIANÓPOLIS",
-    "SC",
-    "SUL",
-    "SÃO PAULO",
-    "SÃO PAULO",
-    "SP",
-    "SUDESTE",
-    "SERGIPE",
-    "ARACAJU",
-    "SE",
-    "NORDESTE",
-    "TOCANTINS",
-    "PALMAS",
-    "TO",
-    "NORTE",
-  ];
-  
-  // Função que é chamada quando o botão é clicado
-function verificarRespostas() {
-    // Seleciona todos os campos de texto
-    const camposTexto = document.querySelectorAll('input[type="text"]');
-    
-    // Itera sobre cada campo de texto
-    camposTexto.forEach(campo => {
-        // Obtém o índice do campo de texto atual
-        const indice = campo.dataset.indice;
-        // Obtém o valor do campo de texto atual
-        const valorUsuario = campo.value.toUpperCase().trim();
-        // Obtém a resposta correta para o campo de texto atual
-        const respostaCorreta = respostasCorretas[0];
+const estadosBrasileiros = ["ACRE", "ALAGOAS", "AMAPÁ", "AMAZONAS", "BAHIA", "CEARÁ", "DISTRITO FEDERAL", "ESPÍRITO SANTO", "GOIÁS", "MARANHÃO", "MATO GROSSO", "MATO GROSSO DO SUL", "MINAS GERAIS", "PARÁ", "PARAÍBA", "PARANÁ", "PERNAMBUCO", "PIAUÍ", "RIO DE JANEIRO", "RIO GRANDE DO NORTE", "RIO GRANDE DO SUL", "RONDÔNIA", "RORAIMA", "SANTA CATARINA", "SÃO PAULO", "SERGIPE", "TOCANTINS"];
+const capitaisEstaduais = ["RIO BRANCO", "MACEIÓ", "MACAPÁ", "MANAUS", "SALVADOR", "FORTALEZA", "BRASÍLIA", "VITÓRIA", "GOIÂNIA", "SÃO LUÍS", "CUIABÁ", "CAMPO GRANDE", "BELO HORIZONTE", "BELÉM", "JOÃO PESSOA", "CURITIBA", "RECIFE", "TERESINA", "RIO DE JANEIRO", "NATAL", "PORTO ALEGRE", "PORTO VELHO", "BOA VISTA", "FLORIANÓPOLIS", "SÃO PAULO", "ARACAJU", "PALMAS"];
+const siglasEstaduais = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
+const regioesEstaduais = ["NORTE", "NORDESTE", "NORTE", "NORTE", "NORDESTE", "NORDESTE", "CENTRO-OESTE", "SUDESTE", "CENTRO-OESTE", "NORDESTE", "CENTRO-OESTE", "CENTRO-OESTE", "SUDESTE", "NORTE", "NORDESTE", "SUL", "NORDESTE", "NORDESTE", "SUDESTE", "NORDESTE", "SUL", "NORTE", "NORTE", "SUL", "SUDESTE", "NORDESTE", "NORTE"];
 
-        // Verifica se o valor do usuário é igual à resposta correta
-        if (valorUsuario === respostaCorreta) {
-            // Se for igual, define a cor de fundo como verde e a cor da fonte como branca
-            campo.style.backgroundColor = 'green';
-            campo.style.color = 'white';
-            console.log("Achou");
-        } else {
-            // Se for diferente, define a cor de fundo como vermelha e a cor da fonte como branca
-            campo.style.backgroundColor = 'red';
-            campo.style.color = 'white';
-            console.log(valorUsuario);
-            console.log(respostaCorreta);
+const estados = document.querySelectorAll('.estado');
+const capitais = document.querySelectorAll('.capital');
+const siglas = document.querySelectorAll('.sigla');
+const regioes = document.querySelectorAll('.regiao');
 
 
+
+let inputEstados = [];
+let inputCapitais = [];
+let inputSiglas = [];
+let inputRegioes = [];
+
+let entrou = false;
+
+function verificaResposta(){
+    estados.forEach(campo => {
+        const valor = campo.value.toUpperCase().replace(/\s/g, '');
+        if (valor.trim() !== '') {
+            inputEstados.push(valor);
         }
-    });
-}
+      });
 
-// Adiciona um ouvinte de evento de clique ao botão "verificaResposta"
-document.getElementById('verificaResposta').addEventListener('click', verificarRespostas);
+      console.log(inputEstados);
+
+      for(i = 0; i < inputEstados.length; i++){
+        console.log(inputEstados[i]);
+        if(inputEstados[i] === estadosBrasileiros[i] ){            
+           console.log("Entrou");
+           entrou = true;
+                if(entrou){
+                    estados[i].disabled = true;  
+                    estados[i].classList.add("correto");
+                }
+        } else {
+            estados[i].classList.add("incorreto");
+            console.log("Não Entrou");
+        }
+      }
+      inputEstados = [];
+}
