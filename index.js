@@ -42,6 +42,9 @@ const Quarto_simulado = require("./database/Quarto_simulado")
 //model do DB do trabaho do terceiro bimestre de história
 const Quinto_simulado = require("./database/Quinto_simulado")
 
+//model do DB do trabaho de história do primeiro bimestre jf
+const Historia_primeiro_bimestre = require("./database/Historia_primeiro_bimestre")
+
 //rota para a página inicial
 app.get("/", (req, res) => {
     res.render("index");
@@ -293,9 +296,7 @@ app.get("/vaievem", (req, res) => {
             //Rotas para as páginas DAS ATIVIDADES DIÁRIAS
     app.get("/atividades_diarias", (req, res) => {
         res.render("atividades_diarias");
-     });
-
-     
+     });     
             //Rotas para as páginas DAS ATIVIDADES DIÁRIAS
     app.get("/divisao", (req, res) => {
         res.render("divisao");
@@ -322,6 +323,10 @@ app.get("/vaievem", (req, res) => {
 
      app.get("/os_seres_humanos", (req, res) => {
         res.render("os_seres_humanos");
+     });
+//Rota para a página da atividade de história do primeiro bimestre
+     app.get("/historia_primeiro_bim", (req, res) => {
+        res.render("historia_primeiro_bim");
      });
 //************************************************************* */
   //Rotas para receber os gabaritos das turmas 61
@@ -3050,6 +3055,137 @@ app.get("/gab_atividade_avaliativa_3bim", (req, res) => {
         }); 
     });
 });
+
+app.post("/gabarito_primeiro_bimestre", (req, res) => {
+    const respostasCorretas = ["C", "A", "B", "B", "C", "D", "B", "C", "B", "C", "A", "B", "C", "B", "A"];
+    var total = 0;
+    var nome = req.body.name;
+    var q1 = req.body.q1;
+    var q2 = req.body.q2;
+    var q3 = req.body.q3;
+    var q4 = req.body.q4;
+    var q5 = req.body.q5;
+    var q6 = req.body.q6;
+    var q7 = req.body.q7;
+    var q8 = req.body.q8;
+    var q9 = req.body.q9;
+    var q10 = req.body.q10;
+    var q11 = req.body.q11;
+    var q12 = req.body.q12;
+    var q13 = req.body.q13;
+    var q14 = req.body.q14;
+    var q15 = req.body.q15;
+    
+    const respostasEnviadas = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15];
+    
+    if(nome==""||q1==null||q2==null||q3==null||q4==null||q5==null||q6==null
+    ||q7==null||q8==null||q9==null||q10==null||q11==null||q12==null||q13==null||q14==null||q15==null){
+        notifier.notify({
+            title: 'RESPONDA TODAS AS PERGUNTAS',
+            message: 'Você não pode deixar nenhum campo em branco.'
+          });
+        res.redirect("historia_primeiro_bim");
+    }else {
+   
+        Historia_primeiro_bimestre.create({
+            nome: nome.toUpperCase(),
+            q1: q1,
+            q2: q2,
+            q3: q3,
+            q4: q4,
+            q5: q5,
+            q6: q6,
+            q7: q7,
+            q8: q8,
+            q9: q9,
+            q10: q10,
+            q11: q11,
+            q12: q12,
+            q13: q13,
+            q14: q14,
+            q15: q15
+        }).then(() => {
+            notifier.notify({
+                title: 'GABARITO SALVO COM SUCESSO',
+                message: 'Parabéns você preencheu tudo.'
+              });
+              res.render("confirmacao15", {
+                nome: nome,
+                q1: q1,
+                q2: q2,
+                q3: q3,
+                q4: q4,
+                q5: q5,
+                q6: q6,
+                q7: q7,
+                q8: q8,
+                q9: q9,
+                q10: q10,
+                q11: q11,
+                q12: q12,
+                q13: q13,
+                q14: q14,
+                q15: q15,
+                res: respostasCorretas,
+                respostas: respostasEnviadas
+            });
+        });
+    }
+});
+
+app.get("/gabarito_historia_primeiro_bimestre", (req, res) => {
+    var total = 0;
+    var nome = req.body.name;
+    var q1 = req.body.q1;
+    var q2 = req.body.q2;
+    var q3 = req.body.q3;
+    var q4 = req.body.q4;
+    var q5 = req.body.q5;
+    var q6 = req.body.q6;
+    var q7 = req.body.q7;
+    var q8 = req.body.q8;
+    var q9 = req.body.q9;
+    var q10 = req.body.q10;
+    var q11 = req.body.q11;
+    var q12 = req.body.q12;
+    var q13 = req.body.q13;
+    var q14 = req.body.q14;
+    var q15 = req.body.q15;
+
+    var gabarito_historia;
+
+    const  respostas = [nome, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15];
+
+    Historia_primeiro_bimestre.findAll({order: [['nome', 'ASC']]}).then(historia => {
+        gabarito_historia = historia;
+    });
+         
+    Historia_primeiro_bimestre.findAll({order: [['nome', 'ASC']]}).then(geografia => {
+        res.render("gabarito_historia_primeiro_bimestre", {
+            nome: nome,
+            total: total,
+            geografia: geografia,
+            historia: gabarito_historia,
+            respostas: respostas
+        }); 
+    });
+});
+
+app.post("/deletar_historia_primeiro_bimestre", (req, res) => {
+    var id = req.body.id; 
+    if(id != undefined){
+        Historia_primeiro_bimestre.destroy({
+            where: {
+                id: id
+            }
+            
+        }).then(()=>{
+            res.redirect("/gabarito_historia_primeiro_bimestre");
+        });
+    }
+});
+
+
 
 //servidor
 app.listen(1313, ()=>{

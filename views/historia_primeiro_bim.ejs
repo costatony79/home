@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>TRABALHO DE HISTÓRIA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link href="/css/style.css" rel="stylesheet">
+    </head>
+    <body class="bg-primary">
+    <hr>
+       <div class="container bg-light">
+            <div class="text-center">
+                <a class="navbar-brand" href="/juslany"><img src="/img/logo_pmbv.png" width="90" height="90" class="d-inline-block align-top" alt=""></a>
+            </div>
+            <div class=" display-3 text-center">HISTÓRIA</div>
+            <div class=" display-4 text-center">ATIVIDADE AVALIATIVA</div>
+            <div class=" display-5 text-center">30 pontos</div>
+       </div>
+        <br>
+
+    <hr>
+    <div class="container">
+        <form method="POST" action="/gabarito_primeiro_bimestre" onsubmit="return validarFormulario()">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Nome:</span>
+              <input type="text" class="form-control" placeholder="Digite seu nome completo aqui" aria-label="Digite seu nome aqui" aria-describedby="basic-addon1" name="name" id="name">
+            </div>
+   <% //CONTAINER DAS QUESTÕES %>
+   <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h5 class="card-title">QUESTÃO 1</h5>
+                        <p class="card-text">Quantos países existem no mundo atualmente, de acordo com a Organização das Nações Unidas (ONU)?</p>
+                        <div class="form-group">
+                            <ol type="A">
+                                <li><input type="radio" name="q1" value="A"> 50</li>
+                                <li><input type="radio" name="q1" value="B"> 100</li>
+                                <li><input type="radio" name="q1" value="C"> 193</li>
+                                <li><input type="radio" name="q1" value="D"> 200</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h5 class="card-title">QUESTÃO 2</h5>
+                        <p class="card-text">Existe somente um povo no Brasil?</p>
+                        <div class="form-group">
+                            <ol type="A">
+                                <li><input type="radio" name="q2" value="A"> Não, no Brasil existem diversos povos indígenas que também fazem parte da população brasileira.</li>
+                                <li><input type="radio" name="q2" value="B"> Sim, no Brasil temos apenas um povo. Os povos que moram nas cidades.</li>
+                                <li><input type="radio" name="q2" value="C"> Não, todos os povos do mundo são brasileiros.</li>
+                                <li><input type="radio" name="q2" value="D"> Sim, somente em Roraima, mora o povo do Brasil.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h5 class="card-title">QUESTÃO 3</h5>
+                        <p class="card-text">O que geralmente acontece quando as pessoas migram de um país para outro? Elas podem adquirir a nacionalidade do novo país?</p>
+                        <div class="form-group">
+                            <ol type="A">
+                                <li><input type="radio" name="q3" value="A"> As pessoas geralmente mudam de emprego quando migram e não podem adquirir a nacionalidade do novo país.</li>
+                                <li><input type="radio" name="q3" value="B"> As pessoas geralmente aprendem uma nova língua, conhecem uma nova cultura e convivem com outro povo. Sim, elas podem adquirir a nacionalidade do novo país.</li>
+                                <li><input type="radio" name="q3" value="C"> As pessoas geralmente abrem um novo negócio quando migram e não podem adquirir a nacionalidade do novo país.</li>
+                                <li><input type="radio" name="q3" value="D"> As pessoas geralmente mudam de casa quando migram e não podem adquirir a nacionalidade do novo país.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h5 class="card-title">QUESTÃO 4</h5>
+                        <p class="card-text">Qual é o maior país do mundo e qual é um exemplo de um país pequeno?</p>
+                        <div class="form-group">
+                            <ol type="A">
+                                <li><input type="radio" name="q4" value="A"> O maior país é a China e um exemplo de um país pequeno é a Croácia.</li>
+                                <li><input type="radio" name="q4" value="B"> O maior país é a Rússia e um exemplo de um país pequeno é a Croácia.</li>
+                                <li><input type="radio" name="q4" value="C"> O maior país é a Rússia e um exemplo de um país pequeno é a Austrália.</li>
+                                <li><input type="radio" name="q4" value="D"> O maior país é a China e um exemplo de um país pequeno é a Austrália.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h5 class="card-title">QUESTÃO 5</h5>
+                        <p class="card-text">Em alguns países, a população fala muitas línguas. Dê um exemplo de um desses países.</p>
+                        <div class="form-group">
+                            <ol type="A">
+                                <li><input type="radio" name="q5" value="A"> Brasil</li>
+                                <li><input type="radio" name="q5" value="B"> Rússia</li>
+                                <li><input type="radio" name="q5" value="C"> Níger</li>
+                                <li><input type="radio" name="q5" value="D"> Croácia</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h5 class="card-title">QUESTÃO 6</h5>
+                        <p class="card-text">Como eram os primeiros seres humanos e o que eles faziam para sobreviver?</p>
+                        <div class="form-group">
+                            <ol type="A">
+                                <li><input type="radio" name="q6" value="A"> Os primeiros seres humanos eram sedentários, viviam da agricultura e moravam em casas de tijolos.</li>
+                                <li><input type="radio" name="q6" value="B"> Os primeiros seres humanos eram sedentários, viviam da caça, da pesca e da coleta de vegetais, e moravam em cavernas ou em moradias feitas de peles, palha, madeiras, entre outros materiais. </li>
+                                <li><input type="radio" name="q6" value="C"> Os primeiros seres humanos eram nômades, viviam da agricultura e moravam em casas de tijolos.</li>
+                                <li><input type="radio" name="q6" value="D"> Os primeiros seres humanos eram nômades, viviam da caça, da pesca e da coleta de vegetais, e moravam em cavernas ou em moradias feitas de peles, palha, madeiras, entre outros materiais. </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br> 
+            <div class="text-center">
+                <img class="img-fluid" src="/img/expansao.png" alt="">
+            </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h5 class="card-title">QUESTÃO 7</h5>
+                        <p class="card-text">Quando começou o processo de expansão dos primeiros grupos humanos nômades da África para outras regiões do planeta e quanto tempo durou?</p>
+                        <div class="form-group">
+                            <ol type="A">
+                                <li><input type="radio" name="q7" value="A"> Começou há 50 mil anos e durou 70 mil anos.</li>
+                                <li><input type="radio" name="q7" value="B"> Começou há 70 mil anos e durou mais de 50 mil anos.</li>
+                                <li><input type="radio" name="q7" value="C"> Começou há 100 mil anos e durou 70 mil anos.</li>
+                                <li><input type="radio" name="q7" value="D"> Começou há 70 mil anos e durou 100 mil anos.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>    
+            <div class="text-center">
+                <img class="img-fluid" src="/img/pintura_rupestre.png" alt="">
+            </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h5 class="card-title">QUESTÃO 8</h5>
+                        <p class="card-text">Quando e como foram descobertas as pinturas rupestres de Lascaux? Quem confirmou que as imagens na caverna eram pinturas rupestres?</p>
+                        <div class="form-group">
+                            <ol type="A">
+                                <li><input type="radio" name="q8" value="A"> Foram descobertas em 1940 por quatro jovens franceses que perseguiam um cão. O professor Léon Laval confirmou que as imagens na caverna eram pinturas rupestres.</li>
+                                <li><input type="radio" name="q8" value="B"> Foram descobertas em 1940 por quatro jovens franceses que estavam explorando a caverna. O arqueólogo Henri Breuil confirmou que as imagens na caverna eram pinturas rupestres.</li>
+                                <li><input type="radio" name="q8" value="C"> Foram descobertas em 1940 por quatro jovens franceses que perseguiam um cão. O arqueólogo Henri Breuil confirmou que as imagens na caverna eram pinturas rupestres.</li>
+                                <li><input type="radio" name="q8" value="D"> Foram descobertas em 1940 por quatro jovens franceses que estavam explorando a caverna. O professor Léon Laval confirmou que as imagens na caverna eram pinturas rupestres.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h5 class="card-title">QUESTÃO 9</h5>
+                        <p class="card-text">Quando os povos nômades começaram a desenvolver a agricultura e quais foram os benefícios dessa prática?</p>
+                        <div class="form-group">
+                            <ol type="A">
+                                <li><input type="radio" name="q9" value="A"> Começaram a desenvolver a agricultura há mais de 5 mil anos. Os benefícios foram a possibilidade de estocar alimentos e a domesticação de animais para produção de alimentos.</li>
+                                <li><input type="radio" name="q9" value="B"> Começaram a desenvolver a agricultura há mais de 10 mil anos. Os benefícios foram a possibilidade de estocar alimentos e a domesticação de animais para produção de alimentos e ajuda nos trabalhos agrícolas.</li>
+                                <li><input type="radio" name="q9" value="C"> Começaram a desenvolver a agricultura há mais de 10 mil anos. Os benefícios foram a possibilidade de estocar alimentos e a domesticação de animais para ajuda nos trabalhos agrícolas.</li>
+                                <li><input type="radio" name="q9" value="D"> Começaram a desenvolver a agricultura há mais de 5 mil anos. Os benefícios foram a possibilidade de estocar alimentos e a domesticação de animais para ajuda nos trabalhos agrícolas.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>      
+            <div class="text-center">
+                <img class="img-fluid" src="/img/primeiros_cultivos.png" alt="">
+            </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h5 class="card-title">QUESTÃO 10</h5>
+                        <p class="card-text">Entre 12000 a.C. e 9000 a.C., onde muitos grupos humanos já praticavam a agricultura e a pecuária?</p>
+                        <div class="form-group">
+                            <ol type="A">
+                                <li><input type="radio" name="q10" value="A"> Na parte ocidental da África.</li>
+                                <li><input type="radio" name="q10" value="B"> Na parte ocidental da Europa.</li>
+                                <li><input type="radio" name="q10" value="C"> Na parte ocidental da Ásia.</li>
+                                <li><input type="radio" name="q10" value="D"> Na parte ocidental da América.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>  
+        <div class="text-center">
+                <img class="img-fluid" src="/img/primeiros_povos.png" alt="">
+        </div>
+    <br>
+  <div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <h5 class="card-title">QUESTÃO 11</h5>
+                    <p class="card-text">Como os primeiros povoados se organizavam e quais eram as adaptações necessárias de acordo com o clima e a geografia?</p>
+                    <div class="form-group">
+                        <ol type="A">
+                            <li><input type="radio" name="q11" value="A"> Os povoados eram organizados em casas para morar, depósitos para os alimentos e estábulos para os animais. Em lugares mais secos, os campos precisavam ser irrigados; em lugares mais úmidos, precisavam ser drenados. Nas regiões mais frias, as casas precisavam ser mais protegidas e os mantimentos, armazenados para o inverno.</li>
+                            <li><input type="radio" name="q11" value="B"> Os povoados eram organizados em casas para morar e depósitos para os alimentos. Em lugares mais secos, os campos precisavam ser irrigados; em lugares mais úmidos, precisavam ser drenados. Nas regiões mais frias, os mantimentos precisavam ser armazenados para o inverno.</li>
+                            <li><input type="radio" name="q11" value="C"> Os povoados eram organizados em casas para morar, depósitos para os alimentos e estábulos para os animais. Em lugares mais secos, os campos precisavam ser drenados; em lugares mais úmidos, precisavam ser irrigados. Nas regiões mais frias, as casas precisavam ser mais protegidas e os mantimentos, armazenados para o inverno.</li>
+                            <li><input type="radio" name="q11" value="D"> Os povoados eram organizados em casas para morar e estábulos para os animais. Em lugares mais secos, os campos precisavam ser irrigados; em lugares mais úmidos, precisavam ser drenados. Nas regiões mais frias, as casas precisavam ser mais protegidas e os mantimentos, armazenados para o inverno.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-body">
+        <div class="card-header">
+            <h2>A Sociedade e a Organização do Trabalho</h2>
+          </div>
+      <p>Uma das principais consequências do crescimento das cidades foi a especialização do trabalho. Até então, os grupos humanos realizavam todas as tarefas necessárias para a sobrevivência. Porém, como mais pessoas passaram a viver nas cidades, tornou-se necessário organizar as tarefas de outra forma.</p>
+      <p>Algumas pessoas passaram a se dedicar à fabricação de utensilios, enquanto outras praticavam o comércio ou exerciam outras tarefas. Ao longo do tempo, as pessoas começaram a se diferenciar entre as que eram consideradas mais importantes e aquelas que eram consideradas menos importantes por razões diversas, como pelo tipo de trabalho que desempenhavam. Dessa maneira, ao longo do tempo, cada povo desenvolveu sua própria forma de organização social.</p>
+      <p>Na região chamada Mesopotamia, por exemplo, surgiram cidades independentes, isto é, que não dependiam umas das outras nem de um governo externo. Possuíam governo próprio, com funcionários, soldados e outras pessoas que ajudavam o governante a garantir a ordem, criar leis e cobrar impostos. O governo é uma das instituições do Estado e tem a função de administrá-lo.</p>
+      <p>Alguns estudiosos definem o <strong>Estado</strong><sup>[1]</sup> como o conjunto de instituições públicas que representam, organizam e atendem as necessidades e as reivindicações da população que habita um território.</p>
+      <p class="text-right">Página 26</p>
+    </div>
+    <div class="card-footer">
+      <small id="footnote1">[1] Definição de Estado: O Estado é uma entidade com poder soberano para governar um povo dentro de uma área territorial delimitada. Assim, pode-se dizer que os elementos constitutivos do Estado são: poder, povo, território, governo e leis. Para o sociólogo alemão Max Weber (1864-1920), o que define o Estado é o monopólio do uso legítimo da força[^1^][1].</small>
+    </div>
+  </div>
+  
+<br>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <h5 class="card-title">QUESTÃO 12</h5>
+                    <p class="card-text">Como a especialização do trabalho influenciou a organização social nas cidades antigas?</p>
+                    <div class="form-group">
+                        <ol type="A">
+                            <li><input type="radio" name="q12" value="A"> A especialização do trabalho não teve impacto na organização social, pois todos realizavam as mesmas tarefas.</li>
+                            <li><input type="radio" name="q12" value="B"> A especialização do trabalho levou a uma diferenciação entre as pessoas, baseada no tipo de trabalho que desempenhavam, influenciando a organização social.</li>
+                            <li><input type="radio" name="q12" value="C"> A especialização do trabalho resultou na criação de cidades independentes com seu próprio governo.</li>
+                            <li><input type="radio" name="q12" value="D"> A especialização do trabalho diminuiu a necessidade de organização social nas cidades.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <h5 class="card-title">QUESTÃO 13</h5>
+                    <p class="card-text">De acordo com o texto, o que é Estado?</p>
+                    <div class="form-group">
+                        <ol type="A">
+                            <li><input type="radio" name="q13" value="A"> Estado é uma entidade com poder soberano para governar um povo dentro de uma área territorial delimitada, composto por poder, povo, território, governo e leis.</li>
+                            <li><input type="radio" name="q13" value="B"> Estado é apenas o governo de um país, responsável por administrar os serviços públicos.</li>
+                            <li><input type="radio" name="q13" value="C"> Estado é o conjunto de instituições públicas que representam, organizam e atendem as necessidades e as reivindicações da população que habita um território.</li>
+                            <li><input type="radio" name="q13" value="D"> Estado é uma entidade que exerce o poder soberano dentro de um determinado território, mas não inclui o povo ou o governo.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-header">
+      <h2>A Constituição brasileira</h2>
+    </div>
+    <div class="card-body">
+      <p>O Brasil foi, a partir de 1500, uma colônia de Portugal. Em 1822, passou a ser um país independente da metrópole, tornando-se uma Monarquia. Desde 15 de novembro de 1889, o Brasil é uma República democrática governada por um presidente eleito, que deve obedecer à Constituição. O país também passou por períodos de ditadura, mas hoje é uma democracia.</p>
+      <p>A primeira Constituição da República brasileira foi aprovada em 1891. Segundo esse documento, somente homens alfabetizados maiores de 21 anos podiam votar. Não podiam votar mulheres, analfabetos, mendigos, soldados e religiosos.</p>
+      <p>A Constituição atual, em vigor desde 1988, é bem diferente. Hoje todos os brasileiros entre 18 e 70 anos têm a obrigatoriedade de votar, independentemente de sua profissão, sexo ou condição financeira. Os analfabetos, os jovens de 16 a 18 anos e as pessoas com mais de 70 anos podem votar se desejarem. Atualmente, há eleições obrigatórias no Brasil a cada dois anos.</p>
+      <p class="text-right">Página 30</p>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <h5 class="card-title">QUESTÃO 14</h5>
+                    <p class="card-text">Quando foi aprovada a primeira Constituição da República brasileira e quem tinha o direito de votar segundo esse documento?</p>
+                    <div class="form-group">
+                        <ol type="A">
+                            <li><input type="radio" name="q14" value="A"> A primeira Constituição da República brasileira foi aprovada em 1889 e todos os cidadãos brasileiros tinham o direito de votar.</li>
+                            <li><input type="radio" name="q14" value="B"> A primeira Constituição da República brasileira foi aprovada em 1891 e somente homens alfabetizados maiores de 21 anos podiam votar.</li>
+                            <li><input type="radio" name="q14" value="C"> A primeira Constituição da República brasileira foi aprovada em 1822 e todos os cidadãos brasileiros tinham o direito de votar.</li>
+                            <li><input type="radio" name="q14" value="D"> A primeira Constituição da República brasileira foi aprovada em 1891 e todos os cidadãos brasileiros tinham o direito de votar.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <h5 class="card-title">QUESTÃO 15</h5>
+                    <p class="card-text">Quem tem a obrigatoriedade de votar segundo a Constituição brasileira atual?</p>
+                    <div class="form-group">
+                        <ol type="A">
+                            <li><input type="radio" name="q15" value="A"> Todos os brasileiros entre 18 e 70 anos, independentemente de sua profissão, sexo ou condição financeira.</li>
+                            <li><input type="radio" name="q15" value="B"> Todos os brasileiros maiores de 18 anos, independentemente de sua profissão, sexo ou condição financeira.</li>
+                            <li><input type="radio" name="q15" value="C"> Todos os brasileiros entre 16 e 70 anos, independentemente de sua profissão, sexo ou condição financeira.</li>
+                            <li><input type="radio" name="q15" value="D"> Todos os brasileiros, independentemente de sua idade, profissão, sexo ou condição financeira.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+    <br>
+   </div>
+    <% //Botões %>                
+            <div class="d-grid gap-2 m-xl-3">        
+              <button type="reset" class="btn btn-danger">LIMPAR</button>
+              <button type="submit" class="btn btn-success">RESPONDER</button>
+            </div>
+        </form>
+        
+    </div>   
+      <%- include('partials/footer.ejs') %>
+    </body>
+    <script src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+
+
+</html>
