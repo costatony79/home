@@ -3185,7 +3185,10 @@ app.post("/deletar_historia_primeiro_bimestre", (req, res) => {
     }
 });
 
-
+//rota para a página do projeto kalfabetizar
+app.get("/projeto_kalfabetizar", (req, res) => {
+    res.render("projeto_kalfabetizar");
+ });
 
 //servidor
 app.listen(1313, ()=>{
